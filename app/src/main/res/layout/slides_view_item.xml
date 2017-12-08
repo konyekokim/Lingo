@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id ="@+id/slides_view_title"
+        android:text="Introduction"
+        android:textSize="20sp"
+        android:textColor="#BDBDBD"
+        android:textAlignment="center"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/slides_view_image"
+        android:src="@drawable/slide_img"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/slides_view_content"
+        android:textAlignment="center"
+        android:textColor="#E0E0E0"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="good luck learnign this language ... it has a lot of perks dkgs';g dskgdg
+ aldkgnlLKSG  DKPADFADMj DJGKSFGnd dfhdgsblfjga jbfgjosf g jbgmsjfglasfg  ddjbgskbfg  sjbd sd fosbd fksjsb s
+sghslfm slsm gllsg  sm gsgbsbojbg;jdfg., dfdnklsngljsjf gmlbsljfagjkbf;glb fjshfuoruop  jdflsfgskjfgf"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"/>
+
+
+
+</LinearLayout>

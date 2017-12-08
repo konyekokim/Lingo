@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.konye.lingo.RegisterActivity"
+    tools:showIn="@layout/activity_register"
+    tools:ignore="MissingPrefix">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/app_icon"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curved_rectangle"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="15dp"
+        android:maxLines="1"
+        android:id="@+id/reg_firstname_editTextView"
+        android:inputType="textPersonName"
+        android:hint="First Name"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="15dp"
+        android:maxLines="1"
+        android:layout_marginRight="15dp"
+        android:inputType="textPersonName"
+        android:background="@drawable/curved_rectangle"
+        android:hint="Surname"
+        android:id="@+id/reg_surname_editTextView"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="15dp"
+        android:maxLines="1"
+        android:inputType="textPersonName"
+        android:background="@drawable/curved_rectangle"
+        android:hint="username"
+        android:id="@+id/reg_username_editTextView"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="15dp"
+        android:hint="email"
+        android:background="@drawable/curved_rectangle"
+        android:maxLines="1"
+        android:inputType="textEmailAddress"
+        android:id="@+id/reg_email_editTextView"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="15dp"
+        android:maxLines="1"
+        android:hint="password"
+        android:background="@drawable/curved_rectangle"
+        android:inputType="textPassword"
+        android:id="@+id/reg_password_editTextView"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="15dp"
+        android:hint="confirm password"
+        android:background="@drawable/curved_rectangle"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        android:id="@+id/reg_retype_password_editTextView"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_button"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/crvd_reg_butn_rect"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:stateListAnimator="@null"
+        fontPath="montserrat_bold.otf"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Have account?" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:textColor="#BF360C"
+            android:id="@+id/sign_in_textVIew"
+            fontPath="montserrat_bold.otf"/>
+
+    </LinearLayout>
+
+</LinearLayout>

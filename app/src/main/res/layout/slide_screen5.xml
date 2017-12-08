@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_gradient5">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/english"
+            android:layout_marginTop="100dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/white"
+                android:textStyle="normal"
+                android:textSize="40sp"
+                android:text="Learn" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:text=" English" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:text="good luck learnign this language ... it has a lot of perks dkgs';g dskgdg
+ aldkgnlLKSG  DKPADFADMj DJGKSFGnd dfhdgsblfjga jbfgjosf g jbgmsjfglasfg  ddjbgskbfg  sjbd sd fosbd fksjsb s
+sghslfm slsm gllsg  sm gsgbsbojbg;jdfg., dfdnklsngljsjf gmlbsljfagjkbf;glb fjshfuoruop  jdflsfgskjfgf"
+            android:textAlignment="center"
+            android:textStyle="normal"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</RelativeLayout>

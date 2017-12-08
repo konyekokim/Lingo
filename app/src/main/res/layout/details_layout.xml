@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About the Book"
+        android:id="@+id/about_the_book"
+        android:textSize="25sp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:id="@+id/about_the_book_content"
+        android:text="dgsdg skg spgs  gma,gbjashgj sgsaghdhfjfkdbfs dfjksdb fskdjfbskd sdfjsdkjfsd fsjdjfs djskjdfs dn sdfbksjdblasfg sn dfjksjdhfs fjsd fsjdbfs dfksjdf ksd hdjfksj  d fjskd fskd fsudfjkbsd fndfjkfd f fjdks df dnf sk dnajfBND FJabdkfn n jfbadlKH DFN NDBFHKA DNF AKK FENJNWKF  JDKF DNS DFIurt nbds kdhfjdks erhjsk dfj sdjkfbskla djfhdjfd ndgkls dgms dgnsdm g sm dgls;ajf g asfkghlsafg sff  gospjabgfm safghlb sjskgs gjslfgn  nf,san fgajfgs anfgjshdjs dknd smaksjbsd"
+        android:textColor="#bdbdbd"/>
+
+</LinearLayout>

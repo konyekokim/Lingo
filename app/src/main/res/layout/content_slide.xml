@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/slide_relative_layout"
+    tools:context="com.example.konye.lingo.SlideActivity"
+    tools:showIn="@layout/activity_slide"
+    tools:ignore="MissingPrefix">
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+    </android.support.v4.view.ViewPager>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layoutDots"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="450dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        
+    </LinearLayout>
+
+
+   <!-- <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/layoutDots"
+        android:background="@android:color/white"
+        android:alpha=".5"/>  -->
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="73dp"
+        android:layout_height="62dp"
+        android:id="@+id/welcome_mahadum_imgview"
+        android:src="@drawable/mahadum_360"/>
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to"
+        android:id="@+id/slide_welcome_textView"
+        android:textStyle="normal"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:id="@+id/mahadum_text_layout"
+        android:layout_below="@+id/slide_welcome_textView"
+        android:layout_marginTop="1dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mahadum"
+            android:id="@+id/mahadum_part"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:textColor="#BF360C"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="360"
+            android:textStyle="bold"
+            android:id="@+id/mahadum_360_part"
+            android:textSize="40sp"
+            android:textColor="#BF360C" />
+
+    </LinearLayout>-->
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/crvd_reg_butn_rect"
+        android:text="Register"
+        android:textStyle="normal"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="240dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        android:id="@+id/slide_welcome_signUp_button"
+        android:layout_below="@+id/welcome_mahadum_imgview"
+        android:layout_centerHorizontal="true"
+        android:stateListAnimator="@null"
+        fontPath="montserrat_bold.otf"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/crvd_trsprnt_login_butn_rect"
+        android:text="Sign In"
+        android:textStyle="normal"
+        android:textAllCaps="false"
+        android:textColor="#9AC72F"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="25dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        android:id="@+id/slide_welcome_signIn_button"
+        android:layout_below="@+id/slide_welcome_signUp_button"
+        android:layout_centerHorizontal="true"
+        fontPath="montserrat_bold.otf"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Skip"
+            android:id="@+id/slide_skip"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="110dp"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            fontPath="Montserrat-Regular.ttf"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text=">"
+            android:id="@+id/slide_next"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="105dp"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            fontPath="Montserrat-Regular.ttf"/>
+
+
+</RelativeLayout>

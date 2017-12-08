@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "346909508749",
+    "firebase_url": "https://mahadum-7fb52.firebaseio.com",
+    "project_id": "mahadum-7fb52",
+    "storage_bucket": "mahadum-7fb52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346909508749:android:69f65e1b4a31cae7",
+        "android_client_info": {
+          "package_name": "com.example.konye.lingo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346909508749-slofke6d1qdsj5f03b3o31c75f814b3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGbuZniAwELZjUlqv2I_hXoMIKcCpGjw8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

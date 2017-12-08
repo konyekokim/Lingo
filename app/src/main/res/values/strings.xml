@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Mahadum</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_language_list">LanguageListActivity</string>
+    <string name="title_activity_choose_path">ChoosePath</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_slide">SlideActivity</string>
+    <string name="title_activity_select_language">SelectLanguage</string>
+    <string name="title_activity_select_language2">SelectLanguage2</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="items">
+        <item>English</item>
+        <item>Add Language</item>
+        <!-- <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+        <item>Item 6</item>-->
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_language">LanguageActivity</string>
+    <string name="title_activity_slide_view">SlideViewActivity</string>
+    <string name="title_activity_quiz_view">QuizViewActivity</string>
+    <string name="title_activity_video_view">VideoViewActivity</string>
+    <string name="title_activity_video_play">VideoPlayActivity</string>
+    <string name="title_activity_language_home">LanguageHomeActivity</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="title_activity_video_views">VideoViewsActivity</string>
+    <string name="title_activity_choose_language">ChooseLanguageActivity</string>
+    <string name="title_activity_store">StoreActivity</string>
+    <string name="title_activity_book">BookActivity</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_video">VideoActivity</string>
+</resources>

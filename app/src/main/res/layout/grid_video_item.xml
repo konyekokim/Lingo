@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix"
+    android:layout_marginTop="2dp">
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="120dp"
+        android:paddingTop="3dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:id="@+id/videos_imgView"/>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Name of Book Above"
+        fontPath="Montserrat-Regular.ttf"
+        android:layout_below="@+id/videos_imgView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:maxLines="2"
+        android:id="@+id/videos_textView"
+        android:textAlignment="center" />
+    
+    <ImageView
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/video_play_button"/>
+    
+</RelativeLayout>

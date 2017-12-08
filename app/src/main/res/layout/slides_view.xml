@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="35dp"
+            android:layout_marginStart="35dp"
+            android:id="@+id/slides_list_view"
+            android:scrollbarStyle="outsideInset"
+            android:smoothScrollbar="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/continue_button"
+            android:id="@+id/continue_btn"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!--<Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Start"
+            android:background="@drawable/crvd_reg_butn_rect"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:id="@+id/lang_start_cont_butn"
+            android:stateListAnimator="@null"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="75dp"
+            android:layout_marginStart="75dp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="30dp"/>-->
+
+    </LinearLayout>
+
+</LinearLayout>
