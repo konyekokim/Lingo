@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.konye.lingo.ui.activities.VideoPlayActivity">
 
-    <include layout="@layout/content_video_play" />
+    <include
+        layout="@layout/content_video_play" />
 
 </android.support.design.widget.CoordinatorLayout>

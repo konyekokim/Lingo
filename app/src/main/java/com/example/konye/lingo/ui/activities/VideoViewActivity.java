@@ -1,7 +1,6 @@
 package com.example.konye.lingo.ui.activities;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -15,13 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.konye.lingo.R;
-import com.example.konye.lingo.YoutubeVideoIDs;
+import com.example.konye.lingo.utils.YoutubeVideoIDs;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeThumbnailLoader;
 import com.google.android.youtube.player.YouTubeThumbnailView;
-
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class VideoViewActivity extends AppCompatActivity implements YouTubeThumbnailView.OnInitializedListener {
 
@@ -45,7 +41,7 @@ public class VideoViewActivity extends AppCompatActivity implements YouTubeThumb
         setContentView(R.layout.activity_video_view);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        changeWidgetsFont();
+        //changeWidgetsFont();
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.lang_action_bar_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -179,9 +175,9 @@ public class VideoViewActivity extends AppCompatActivity implements YouTubeThumb
         }
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("Montserrat-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
@@ -190,6 +186,6 @@ public class VideoViewActivity extends AppCompatActivity implements YouTubeThumb
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
 }

@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
-import com.example.konye.lingo.DrawerClass;
+import com.example.konye.lingo.utils.DrawerClass;
 import com.example.konye.lingo.R;
 
 import java.util.ArrayList;

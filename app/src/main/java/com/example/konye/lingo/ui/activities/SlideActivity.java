@@ -20,10 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.konye.lingo.R;
-import com.example.konye.lingo.SlideManager;
-
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import com.example.konye.lingo.utils.SlideManager;
 
 public class SlideActivity extends AppCompatActivity {
 
@@ -36,10 +33,11 @@ public class SlideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_slide);
         setFullScreen();
+        setContentView(R.layout.activity_slide);
+
         //making all the fonts montserrat.
-        changeWidgetsFont();
+        //changeWidgetsFont();
         SlideManager slideManager = new SlideManager(this);
         if(!slideManager.check()){
             slideManager.setFirst(false);
@@ -185,9 +183,9 @@ public class SlideActivity extends AppCompatActivity {
         }
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("Montserrat-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
@@ -196,7 +194,7 @@ public class SlideActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
     private void setFullScreen(){
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,

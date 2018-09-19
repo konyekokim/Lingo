@@ -9,21 +9,21 @@
     tools:showIn="@layout/activity_quiz_view">
 
     <android.support.v4.view.ViewPager
+        android:id="@+id/quiz_view_pager"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/quiz_view_pager">
+        android:layout_height="wrap_content">
 
     </android.support.v4.view.ViewPager>
 
     <ImageView
+        android:id="@+id/quiz_view_next_butn"
         android:layout_width="70dp"
         android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginBottom="25dp"
         android:layout_marginEnd="25dp"
         android:src="@drawable/next_button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/quiz_view_next_butn"
         android:textColor="#ffffff" />
 
 </RelativeLayout>

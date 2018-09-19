@@ -1,4 +1,6 @@
-package com.example.konye.lingo;
+package com.example.konye.lingo.utils;
+
+import com.example.konye.lingo.R;
 
 /**
  * Created by KONYE on 5/15/2017.

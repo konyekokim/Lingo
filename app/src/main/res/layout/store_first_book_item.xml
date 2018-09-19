@@ -4,11 +4,11 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_height="220dp"
-        android:layout_width="match_parent"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
         android:id="@+id/book_first_img_view"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
         android:src="@drawable/first_book" />
 
 </LinearLayout>

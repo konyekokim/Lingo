@@ -7,19 +7,19 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.konye.lingo.ui.activities.FirstActivity"
     tools:showIn="@layout/activity_first">
-    
+
     <ImageView
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="110dp"
-        android:background="@drawable/mahadum_new_logo"/>
-    
+        android:background="@drawable/mahadum_new_logo" />
+
     <ImageView
         android:layout_width="220dp"
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/mahadum_kids"/>
+        android:background="@drawable/mahadum_kids" />
 
 </RelativeLayout>

@@ -16,63 +16,63 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
         android:background="@color/cardview_light_background"
         tools:ignore="MissingPrefix">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="350dp"
-            android:orientation="vertical"
             android:background="@drawable/book_landing_page"
+            android:orientation="vertical"
             tools:ignore="MissingPrefix">
 
             <TextView
+                fontPath="fonts/Montserrat-Regular.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="0dp"
-                android:text="Access"
-                android:textSize="30sp"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="20dp"
+                android:paddingBottom="0dp"
+                android:text="Access"
                 android:textColor="#FC7900"
-                fontPath="Montserrat-Regular.ttf"/>
+                android:textSize="30sp" />
 
             <TextView
+                fontPath="fonts/montserrat_bold.otf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bookstore."
-                android:textSize="30sp"
                 android:layout_marginStart="18dp"
+                android:text="Bookstore."
                 android:textColor="#FC7900"
-                fontPath="montserrat_bold.otf"/>
+                android:textSize="30sp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginStart="25dp"
                 android:layout_marginEnd="25dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="110dp"
-                android:background="@drawable/books_image"/>
+                android:background="@drawable/books_image" />
 
         </LinearLayout>
 
     </RelativeLayout>
 
     <Button
+        android:id="@+id/book_store_button"
+        fontPath="fonts/montserrat_bold.otf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginEnd="65dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="70dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginStart="65dp"
         android:background="@drawable/crvd_trsprnt_login_butn_rect"
-        android:id="@+id/book_store_button"
         android:text="Book Store"
-        android:textColor="#9AC526"
         android:textAllCaps="false"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        fontPath="montserrat_bold.otf"/>
+        android:textColor="#9AC526" />
 
 </RelativeLayout>

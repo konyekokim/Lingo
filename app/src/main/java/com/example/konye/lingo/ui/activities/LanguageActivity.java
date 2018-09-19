@@ -27,7 +27,7 @@ public class LanguageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language);
-        changeWidgetsFont();
+        //changeWidgetsFont();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -70,9 +70,9 @@ public class LanguageActivity extends AppCompatActivity {
         });
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("Montserrat-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
@@ -81,6 +81,6 @@ public class LanguageActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
 }

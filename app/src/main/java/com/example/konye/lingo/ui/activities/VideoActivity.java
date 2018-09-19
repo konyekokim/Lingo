@@ -30,7 +30,7 @@ public class VideoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_video);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        changeWidgetsFont();
+        //hangeWidgetsFont();
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.lang_action_bar_layout);
@@ -64,7 +64,7 @@ public class VideoActivity extends AppCompatActivity {
         });
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("helvetica_font_normal.ttf")
                 .setFontAttrId(R.attr.fontPath)
@@ -75,6 +75,6 @@ public class VideoActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
 }

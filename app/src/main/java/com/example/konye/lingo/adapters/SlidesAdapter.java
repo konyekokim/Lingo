@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.konye.lingo.R;
-import com.example.konye.lingo.SlidesClass;
+import com.example.konye.lingo.utils.SlidesClass;
 
 import java.util.ArrayList;
 

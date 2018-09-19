@@ -7,120 +7,123 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.konye.lingo.ui.activities.BookActivity"
-    tools:showIn="@layout/activity_book"
-    tools:ignore="MissingPrefix">
+    tools:ignore="MissingPrefix"
+    tools:showIn="@layout/activity_book">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        tools:ignore="MissingPrefix">
+        android:layout_marginTop="20dp">
 
         <ImageView
+            android:id="@+id/book_img_view"
             android:layout_width="115dp"
             android:layout_height="190dp"
             android:layout_marginStart="30dp"
-            android:id="@+id/book_img_view"
-            android:src="@drawable/book3"/>
+            android:src="@drawable/book3" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
             android:id="@+id/name_of_book"
-            android:text="Making Things Happen"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:textColor="#000000"
-            android:layout_toEndOf="@+id/book_img_view"
-            fontPath="montserrat_bold.otf"/>
-
-        <TextView
+            fontPath="fonts/montserrat_bold.otf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/name_of_author"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/book_img_view"
+            android:text="Making Things Happen"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/name_of_author"
+            fontPath="fonts/Montserrat-Regular.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_of_book"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/book_img_view"
             android:text="Elizabeth Murphy"
             android:textColor="#bdbdbd"
-            android:textStyle="normal"
             android:textSize="12sp"
-            android:layout_toEndOf="@+id/book_img_view"
-            android:layout_below="@+id/name_of_book"/>
+            android:textStyle="normal" />
 
         <TextView
+            android:id="@+id/price_textView"
+            fontPath="fonts/montserrat_bold.otf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/book_img_view"
             android:layout_below="@+id/name_of_author"
-            android:id="@+id/price_textView"
-            fontPath="montserrat_bold.otf"
-            android:text="N 1,500"
-            android:textColor="#000000"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"/>
-        
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/book_img_view"
+            android:text="N 1,500"
+            android:textColor="#000000" />
+
         <View
+            android:id="@+id/book_line_view"
             android:layout_width="160dp"
             android:layout_height="1dp"
-            android:background="#9e9e9e"
-            android:id="@+id/book_line_view"
-            android:layout_toEndOf="@+id/book_img_view"
             android:layout_below="@+id/price_textView"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="3dp"/>
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/book_img_view"
+            android:background="#9e9e9e" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="170dp"
-            android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/shelf"/>
-        
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="170dp"
+            android:src="@drawable/shelf" />
+
         <Button
+            android:id="@+id/preview_button"
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_toEndOf="@+id/book_img_view"
-            android:text="Preview"
-            android:textColor="#FC7900"
-            android:textAllCaps="false"
             android:layout_below="@+id/book_line_view"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/book_img_view"
             android:background="@drawable/crvd_trsprnt_prev_butn"
-            android:id="@+id/preview_button"/>
+            android:text="Preview"
+            android:textAllCaps="false"
+            android:textColor="#FC7900" />
 
         <Button
+            android:id="@+id/purchase_button"
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="120dp"
             android:layout_height="40dp"
-            android:layout_toEndOf="@+id/book_img_view"
-            android:text="Purchase"
-            android:textAllCaps="false"
             android:layout_below="@+id/preview_button"
             android:layout_marginStart="20dp"
-            android:id="@+id/purchase_button"
             android:layout_marginTop="3dp"
-            android:textColor="#ffffff"
-            android:background="@drawable/crvd_purch_butn_rect"/>
+            android:layout_toEndOf="@+id/book_img_view"
+            android:background="@drawable/crvd_purch_butn_rect"
+            android:text="Purchase"
+            android:textAllCaps="false"
+            android:textColor="#ffffff" />
 
     </RelativeLayout>
 
     <TextView
+        fontPath="fonts/montserrat_bold.otf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
         android:text="About the book"
         android:textColor="#000000"
-        fontPath="montserrat_bold.otf"
-        android:layout_marginStart="35dp"
-        android:textSize="20dp"/>
+        android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/about_textView"
+        fontPath="fonts/Montserrat-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:id="@+id/about_textView"
-        android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

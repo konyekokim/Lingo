@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/slide_relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/slide_relative_layout"
     tools:context="com.example.konye.lingo.ui.activities.SlideActivity"
-    tools:showIn="@layout/activity_slide"
-    tools:ignore="MissingPrefix">
-    
+    tools:ignore="MissingPrefix"
+    tools:showIn="@layout/activity_slide">
+
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        
+
     </android.support.v4.view.ViewPager>
-    
+
     <LinearLayout
+        android:id="@+id/layoutDots"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/layoutDots"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="450dp"
         android:gravity="center"
         android:orientation="horizontal">
-        
+
     </LinearLayout>
 
 
-   <!-- <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@+id/layoutDots"
-        android:background="@android:color/white"
-        android:alpha=".5"/>  -->
-    
+    <!-- <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:layout_above="@+id/layoutDots"
+         android:background="@android:color/white"
+         android:alpha=".5"/>  -->
+
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="73dp"
-        android:layout_height="62dp"
         android:id="@+id/welcome_mahadum_imgview"
-        android:src="@drawable/mahadum_360"/>
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="73dp"
+        android:src="@drawable/mahadum_360" />
 
     <!--<TextView
         android:layout_width="wrap_content"
@@ -85,71 +85,71 @@
 
 
     <Button
+        android:id="@+id/slide_welcome_signUp_button"
+        fontPath="fonts/montserrat_bold.otf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/crvd_reg_butn_rect"
-        android:text="Register"
-        android:textStyle="normal"
-        android:textColor="#ffffff"
-        android:textAllCaps="false"
+        android:layout_below="@+id/welcome_mahadum_imgview"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="55dp"
         android:layout_marginRight="55dp"
         android:layout_marginTop="240dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
+        android:background="@drawable/crvd_reg_butn_rect"
         android:paddingBottom="20dp"
-        android:id="@+id/slide_welcome_signUp_button"
-        android:layout_below="@+id/welcome_mahadum_imgview"
-        android:layout_centerHorizontal="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
         android:stateListAnimator="@null"
-        fontPath="montserrat_bold.otf"/>
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textStyle="normal" />
 
     <Button
+        android:id="@+id/slide_welcome_signIn_button"
+        fontPath="fonts/montserrat_bold.otf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/crvd_trsprnt_login_butn_rect"
-        android:text="Sign In"
-        android:textStyle="normal"
-        android:textAllCaps="false"
-        android:textColor="#9AC72F"
+        android:layout_below="@+id/slide_welcome_signUp_button"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="55dp"
         android:layout_marginRight="55dp"
         android:layout_marginTop="25dp"
-        android:paddingTop="20dp"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
+        android:background="@drawable/crvd_trsprnt_login_butn_rect"
         android:paddingBottom="20dp"
-        android:id="@+id/slide_welcome_signIn_button"
-        android:layout_below="@+id/slide_welcome_signUp_button"
-        android:layout_centerHorizontal="true"
-        fontPath="montserrat_bold.otf"/>
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="#9AC72F"
+        android:textStyle="normal" />
 
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Skip"
-            android:id="@+id/slide_skip"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="110dp"
-            android:layout_alignParentStart="true"
-            android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            fontPath="Montserrat-Regular.ttf"/>
+    <Button
+        android:id="@+id/slide_skip"
+        fontPath="fonts/Montserrat-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="110dp"
+        android:background="@android:color/transparent"
+        android:text="Skip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white" />
 
-        <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text=">"
-            android:id="@+id/slide_next"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="105dp"
-            android:background="@android:color/transparent"
-            android:textColor="@android:color/white"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            fontPath="Montserrat-Regular.ttf"/>
+    <Button
+        android:id="@+id/slide_next"
+        fontPath="fonts/Montserrat-Regular.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="105dp"
+        android:background="@android:color/transparent"
+        android:text=">"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white" />
 
 
 </RelativeLayout>

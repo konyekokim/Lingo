@@ -10,13 +10,13 @@
         android:layout_weight="0.1">
 
         <ListView
+            android:id="@+id/slides_list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="35dp"
             android:layout_marginStart="35dp"
-            android:id="@+id/slides_list_view"
             android:scrollbarStyle="outsideInset"
-            android:smoothScrollbar="true"/>
+            android:smoothScrollbar="true" />
 
     </LinearLayout>
 
@@ -26,13 +26,13 @@
         android:layout_marginTop="40dp">
 
         <ImageView
+            android:id="@+id/continue_btn"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/continue_button"
-            android:id="@+id/continue_btn"
-            android:layout_marginStart="50dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginEnd="50dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginStart="50dp"
+            android:background="@drawable/continue_button" />
 
         <!--<Button
             android:layout_width="match_parent"

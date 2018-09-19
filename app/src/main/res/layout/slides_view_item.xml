@@ -2,9 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
 
     <TextView
+        fontPath="fonts/Montserrat-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id ="@+id/slides_view_title"
@@ -27,6 +30,7 @@
         android:src="@drawable/slide_img"/>
 
     <TextView
+        fontPath="fonts/Montserrat-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/slides_view_content"

@@ -1,4 +1,4 @@
-package com.example.konye.lingo;
+package com.example.konye.lingo.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

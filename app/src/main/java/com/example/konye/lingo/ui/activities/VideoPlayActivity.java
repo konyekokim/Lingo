@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.konye.lingo.R;
-import com.example.konye.lingo.YoutubeVideoIDs;
+import com.example.konye.lingo.utils.YoutubeVideoIDs;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubeInitializationResult;

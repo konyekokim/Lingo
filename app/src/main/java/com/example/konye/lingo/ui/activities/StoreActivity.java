@@ -32,7 +32,7 @@ public class StoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
         checkNetworkConnection();
-        changeWidgetsFont();
+        //changeWidgetsFont();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -105,9 +105,9 @@ public class StoreActivity extends AppCompatActivity {
         finish();
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("Montserrat-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
@@ -116,7 +116,7 @@ public class StoreActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
 
 }

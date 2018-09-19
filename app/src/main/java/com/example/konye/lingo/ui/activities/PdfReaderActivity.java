@@ -12,7 +12,6 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
@@ -26,7 +25,7 @@ public class PdfReaderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_reader);
-        changeWidgetsFont();
+        //changeWidgetsFont();
         pdfView = findViewById(R.id.pdfView);
         //this is for populating the viewer from assets
         //pdfView.fromAsset("result.PDF").load();
@@ -58,9 +57,9 @@ public class PdfReaderActivity extends AppCompatActivity {
         }
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("Montserrat-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
@@ -69,5 +68,5 @@ public class PdfReaderActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 }

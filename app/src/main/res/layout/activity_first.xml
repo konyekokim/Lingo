@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.konye.lingo.ui.activities.FirstActivity">
 
-    <include layout="@layout/content_first" />
+    <include
+        layout="@layout/content_first" />
 
 </android.support.design.widget.CoordinatorLayout>

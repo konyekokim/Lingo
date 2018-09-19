@@ -3,7 +3,6 @@ package com.example.konye.lingo.adapters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.konye.lingo.QuizType1;
+import com.example.konye.lingo.utils.QuizType1;
 import com.example.konye.lingo.R;
 
 import java.util.ArrayList;

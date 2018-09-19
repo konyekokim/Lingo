@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.konye.lingo.R;
-import com.example.konye.lingo.VideosClass;
+import com.example.konye.lingo.utils.VideosClass;
 
 import java.util.ArrayList;
 

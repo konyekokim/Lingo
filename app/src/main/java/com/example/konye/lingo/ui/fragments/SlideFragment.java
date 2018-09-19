@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.example.konye.lingo.R;
-import com.example.konye.lingo.SlidesClass;
+import com.example.konye.lingo.utils.SlidesClass;
 import com.example.konye.lingo.adapters.SlidesAdapter;
 import com.example.konye.lingo.ui.activities.QuizViewActivity;
 import com.example.konye.lingo.ui.activities.SlideViewActivity;

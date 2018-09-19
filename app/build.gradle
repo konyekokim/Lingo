@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.3'
     implementation 'com.akexorcist:RoundCornerProgressBar:2.0.3'
     implementation 'com.github.HotBitmapGG:RingProgressBar:V1.2.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     testImplementation 'junit:junit:4.12'
 
     //add library for pdf reading

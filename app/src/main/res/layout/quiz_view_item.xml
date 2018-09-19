@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
 
     <TextView
+        android:id="@+id/quiz_view_title"
+        fontPath="fonts/Montserrat-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id ="@+id/quiz_view_title"
-        android:text="Question 1"
-        android:textAlignment="center"
+        android:paddingBottom="15dp"
         android:paddingTop="15dp"
-        android:paddingBottom="15dp" />
+        android:text="Question 1"
+        android:textAlignment="center" />
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="#E0E0E0"/>
+        android:background="#E0E0E0" />
 
     <TextView
+        android:id="@+id/quiz_view_question"
+        fontPath="fonts/Montserrat-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:id="@+id/quiz_view_question"
-        android:text="Which of the animals sound very close to the French in speaking?"
+        android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"/>
+        android:paddingBottom="30dp"
+        android:paddingTop="30dp"
+        android:text="Which of the animals sound very close to the French in speaking?"
+        android:textAlignment="center"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,18 +45,18 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/img_ans_1"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
-                android:id="@+id/img_ans_1"
                 android:src="@drawable/question_img" />
 
             <ImageView
+                android:id="@+id/ans1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:id="@+id/ans1"
                 android:layout_centerInParent="true"
                 android:src="@drawable/right_ans"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
         </RelativeLayout>
 
@@ -62,18 +66,18 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/img_ans_2"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
-                android:id="@+id/img_ans_2"
                 android:src="@drawable/question_img" />
 
             <ImageView
+                android:id="@+id/ans2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:id="@+id/ans2"
                 android:layout_centerInParent="true"
                 android:src="@drawable/wrong_ans"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
         </RelativeLayout>
 
@@ -89,18 +93,18 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/img_ans_3"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
-                android:id="@+id/img_ans_3"
                 android:src="@drawable/question_img" />
 
             <ImageView
+                android:id="@+id/ans3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerInParent="true"
-                android:id="@+id/ans3"
                 android:src="@drawable/wrong_ans"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
         </RelativeLayout>
 
@@ -109,18 +113,18 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/img_ans_4"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
-                android:id="@+id/img_ans_4"
                 android:src="@drawable/question_img" />
 
             <ImageView
+                android:id="@+id/ans4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerInParent="true"
-                android:id="@+id/ans4"
                 android:src="@drawable/wrong_ans"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
         </RelativeLayout>
 

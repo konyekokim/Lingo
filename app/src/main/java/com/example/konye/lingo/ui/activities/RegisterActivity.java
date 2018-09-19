@@ -29,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        changeWidgetsFont();
+        //changeWidgetsFont();
         //firebaseAuth = FirebaseAuth.getInstance();
         //addding the widgets
         progressDialog = new ProgressDialog(this);
@@ -156,7 +156,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("helvetica_font_normal.ttf")
                 .setFontAttrId(R.attr.fontPath)
@@ -167,5 +167,5 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 }

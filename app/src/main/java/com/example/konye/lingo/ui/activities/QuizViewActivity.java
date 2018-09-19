@@ -1,6 +1,5 @@
 package com.example.konye.lingo.ui.activities;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -11,14 +10,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.konye.lingo.QuizType1;
+import com.example.konye.lingo.utils.QuizType1;
 import com.example.konye.lingo.R;
 import com.example.konye.lingo.adapters.QuizViewPagerAdapter;
 
 import java.util.ArrayList;
-
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class QuizViewActivity extends AppCompatActivity {
 
@@ -31,7 +27,7 @@ public class QuizViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_view);
-        changeWidgetsFont();
+        //changeWidgetsFont();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -97,9 +93,9 @@ public class QuizViewActivity extends AppCompatActivity {
         }
     };
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("Montserrat-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
@@ -108,7 +104,7 @@ public class QuizViewActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
    /* private ArrayList<QuizType2> quizType2s(){
         quizType2list = new ArrayList<>();

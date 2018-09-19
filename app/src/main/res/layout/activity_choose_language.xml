@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.konye.lingo.ui.activities.ChooseLanguageActivity">
 
-    <include layout="@layout/content_choose_language" />
+    <include
+        layout="@layout/content_choose_language" />
 
 </android.support.design.widget.CoordinatorLayout>

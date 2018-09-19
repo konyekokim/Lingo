@@ -23,7 +23,7 @@ public class ChooseLanguageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_language);
-        changeWidgetsFont();
+        //changeWidgetsFont();
         englishLayout = findViewById(R.id.english_layout);
         frenchLayout = findViewById(R.id.french_layout);
         nigerianLayout = findViewById(R.id.nigerian_layout);
@@ -101,7 +101,7 @@ public class ChooseLanguageActivity extends AppCompatActivity {
         });
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("helvetica_font_normal.ttf")
                 .setFontAttrId(R.attr.fontPath)
@@ -112,6 +112,6 @@ public class ChooseLanguageActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
 }

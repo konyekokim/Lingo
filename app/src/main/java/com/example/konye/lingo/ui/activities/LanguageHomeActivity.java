@@ -1,6 +1,5 @@
 package com.example.konye.lingo.ui.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -16,14 +15,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.konye.lingo.adapters.DrawerAdapter;
-import com.example.konye.lingo.DrawerClass;
+import com.example.konye.lingo.utils.DrawerClass;
 import com.example.konye.lingo.R;
 
 import java.util.ArrayList;
 
 import io.netopen.hotbitmapgg.library.view.RingProgressBar;
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class LanguageHomeActivity extends AppCompatActivity {
 
@@ -40,7 +37,7 @@ public class LanguageHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language_home);
-        changeWidgetsFont();
+        //changeWidgetsFont();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -159,9 +156,9 @@ public class LanguageHomeActivity extends AppCompatActivity {
         return drawerClassArrayList;
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("Montserrat-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
@@ -170,5 +167,5 @@ public class LanguageHomeActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 }

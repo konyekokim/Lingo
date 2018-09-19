@@ -7,63 +7,66 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.konye.lingo.ui.activities.ChooseLanguageActivity"
-    tools:showIn="@layout/activity_choose_language">
+    tools:showIn="@layout/activity_choose_language"
+    tools:ignore="MissingPrefix">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/choose_your_lang"
+            fontPath="fonts/montserrat_bold.ttf"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:text="Choose your Language"
-            android:id="@+id/choose_your_lang"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            android:background="@drawable/mahadum_bg"
             android:gravity="center"
+            android:text="Choose your Language"
             android:textColor="#ffffff"
-            android:background="@drawable/mahadum_bg" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/store_button"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:id="@+id/store_button"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/shop_cart"/>
+            android:src="@drawable/shop_cart" />
 
     </RelativeLayout>
 
 
     <RelativeLayout
+        android:id="@+id/english_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:id="@+id/english_layout">
+        android:layout_marginTop="15dp">
 
         <ImageView
+            android:id="@+id/flag_view"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="50dp"
             android:layout_alignParentStart="true"
-            android:id="@+id/flag_view"
+            android:layout_marginStart="50dp"
             android:src="@drawable/us"
             tools:ignore="ContentDescription" />
 
         <TextView
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/flag_view"
             android:layout_marginStart="15dp"
-            android:textSize="15sp"
-            android:text="English" />
+            android:layout_toEndOf="@+id/flag_view"
+            android:text="English"
+            android:textSize="15sp" />
 
         <ImageView
-            android:layout_height="15dp"
             android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="50dp"
@@ -73,32 +76,33 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/french_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/french_layout">
+        android:layout_marginTop="10dp">
 
         <ImageView
+            android:id="@+id/french_flag_view"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="50dp"
             android:layout_alignParentStart="true"
-            android:id="@+id/french_flag_view"
+            android:layout_marginStart="50dp"
             android:src="@drawable/fr"
             tools:ignore="ContentDescription" />
 
         <TextView
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/french_flag_view"
             android:layout_marginStart="15dp"
-            android:textSize="15sp"
-            android:text="French" />
+            android:layout_toEndOf="@+id/french_flag_view"
+            android:text="French"
+            android:textSize="15sp" />
 
         <ImageView
-            android:layout_height="15dp"
             android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="50dp"
@@ -108,32 +112,33 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/nigerian_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:id="@+id/nigerian_layout">
+        android:layout_marginTop="5dp">
 
         <ImageView
+            android:id="@+id/nigerian_flag_view"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="50dp"
             android:layout_alignParentStart="true"
-            android:id="@+id/nigerian_flag_view"
+            android:layout_marginStart="50dp"
             android:src="@drawable/ng"
             tools:ignore="ContentDescription" />
 
         <TextView
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/nigerian_flag_view"
             android:layout_marginStart="15dp"
-            android:textSize="15sp"
-            android:text="Nigerian" />
+            android:layout_toEndOf="@+id/nigerian_flag_view"
+            android:text="Nigerian"
+            android:textSize="15sp" />
 
         <ImageView
-            android:layout_height="15dp"
             android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="50dp"
@@ -143,28 +148,29 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
         android:id="@+id/yoruba_layout"
-        android:layout_marginStart="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="1dp"
         android:background="#F5F5F5"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
         android:visibility="gone">
 
         <TextView
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="96dp"
-            android:textSize="15sp"
-            android:text="Yoruba" />
+            android:text="Yoruba"
+            android:textSize="15sp" />
 
         <ImageView
-            android:layout_height="15dp"
             android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
@@ -174,28 +180,29 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:background="#F5F5F5"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
         android:id="@+id/igbo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="1dp"
+        android:background="#F5F5F5"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
         android:visibility="gone">
 
         <TextView
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="96dp"
-            android:textSize="15sp"
-            android:text="Igbo" />
+            android:text="Igbo"
+            android:textSize="15sp" />
 
         <ImageView
-            android:layout_height="15dp"
             android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
@@ -205,28 +212,29 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="#F5F5F5"
         android:id="@+id/hausa_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="1dp"
+        android:background="#F5F5F5"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
         android:visibility="gone">
 
         <TextView
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="96dp"
-            android:textSize="15sp"
-            android:text="Hausa" />
+            android:text="Hausa"
+            android:textSize="15sp" />
 
         <ImageView
-            android:layout_height="15dp"
             android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
@@ -236,28 +244,29 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/efik_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="1dp"
         android:background="#F5F5F5"
-        android:id="@+id/efik_layout"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
         android:visibility="gone">
 
         <TextView
+            fontPath="fonts/Montserrat-Regular.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="96dp"
-            android:textSize="15sp"
-            android:text="Efik" />
+            android:text="Efik"
+            android:textSize="15sp" />
 
         <ImageView
-            android:layout_height="15dp"
             android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="20dp"
@@ -267,11 +276,11 @@
     </RelativeLayout>
 
     <ImageView
-        android:layout_height="60dp"
         android:layout_width="120dp"
-        android:src="@drawable/save"
-        android:layout_marginTop="20dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/save"
         tools:ignore="ContentDescription" />
 
 </LinearLayout>

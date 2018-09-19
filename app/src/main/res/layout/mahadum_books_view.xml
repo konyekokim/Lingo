@@ -5,13 +5,13 @@
     android:orientation="vertical">
 
     <GridView
+        android:id="@+id/gridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/gridView"
+        android:layout_marginStart="5dp"
         android:columnWidth="120dp"
         android:numColumns="auto_fit"
-        android:layout_marginStart="5dp"
-        android:stretchMode="columnWidth"/>
+        android:stretchMode="columnWidth" />
 
 </LinearLayout>

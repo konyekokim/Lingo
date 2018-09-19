@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        changeWidgetsFont();
+        //changeWidgetsFont();
         /*firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() != null){
             finish();
@@ -121,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
         backgroundTask.execute(method, email, password);
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("helvetica_font_normal.ttf")
                 .setFontAttrId(R.attr.fontPath)
@@ -132,7 +132,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 
     /**
      * Created by ALPHA AND JAM on 12/6/2017.

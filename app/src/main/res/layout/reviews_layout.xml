@@ -2,38 +2,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="15dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="15dp"
+    tools:ignore="MissingPrefix">
 
     <TextView
+        android:id="@+id/reviewer_name"
+        fontPath="fonts/Montserrat-Regular.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alex Hunter"
-        android:id="@+id/reviewer_name"
-        android:textSize="12sp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="5dp"
-        android:textColor="#33691E"/>
+        android:text="Alex Hunter"
+        android:textColor="#33691E"
+        android:textSize="12sp" />
 
     <ImageView
+        android:id="@+id/review_ratings_circles"
         android:layout_width="100dp"
         android:layout_height="10dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/review_ratings_circles"
-        android:src="@drawable/ratings_52"
+        android:layout_alignParentTop="true"
         android:layout_marginEnd="25dp"
-        android:layout_marginTop="7dp"/>
+        android:layout_marginTop="7dp"
+        android:src="@drawable/ratings_52" />
 
     <TextView
+        android:id="@+id/review_textView"
+        fontPath="fonts/Montserrat-Regular.ttf"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:id="@+id/review_textView"
         android:layout_below="@+id/reviewer_name"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="12dp"
         android:text="dgsdg skg spgs  gma,gbjashgj sgsaghdhfjfkdbfs dfjksdb fskdjfbskd sdfjsdkjfsd fsjdjfs djskjdfs dn sdfbksjdblasfg sn dfjksjdhfs fjsd fsjdbfs dfksjdf ksd hdjfksj  d fjskd fskd fsudfjkbsd fndfjkfd f fjdks df dnf sk dnajfBND dgsdg skg spgs  gma,gbjashgj sgsaghdhfjfkdbfs dfjksdb fskdjfbskd sdfjsdkjfsd fsjdjfs djskjdfs dn sdfbksjdblasfg sn dfjksjdhfs fjsd fsjdbfs dfksjdf ksd hdjfksj  d fjskd fskd fsudfjkbsd fndfjkfd f fjdks df dnf sk dnajfBND FJabdkfn n jfbadlKH DFN NDBFH"
-        android:textSize="10sp"
-        android:textColor="#9e9e9e"/>
+        android:textColor="#9e9e9e"
+        android:textSize="10sp" />
 
 </RelativeLayout>

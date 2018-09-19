@@ -1,4 +1,4 @@
-package com.example.konye.lingo;
+package com.example.konye.lingo.utils;
 
 /**
  * Created by KONYE on 6/12/2017.

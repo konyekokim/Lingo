@@ -25,7 +25,7 @@ public class BookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        changeWidgetsFont();
+        //changeWidgetsFont();
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.lang_action_bar_layout);
@@ -73,7 +73,7 @@ public class BookActivity extends AppCompatActivity {
         finish();
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("helvetica_font_normal.ttf")
                 .setFontAttrId(R.attr.fontPath)
@@ -84,5 +84,5 @@ public class BookActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 }

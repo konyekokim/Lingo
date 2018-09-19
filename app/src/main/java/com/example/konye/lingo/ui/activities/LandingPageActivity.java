@@ -18,9 +18,10 @@ public class LandingPageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_landing_page);
         setFullScreen();
-        changeWidgetsFont();
+        setContentView(R.layout.activity_landing_page);
+
+        //changeWidgetsFont();
         bookStoreButton = findViewById(R.id.book_store_button);
         bookStoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,9 +37,9 @@ public class LandingPageActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
-    private void changeWidgetsFont(){
+    /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("Montserrat-Regular.ttf")
+                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
@@ -47,5 +48,5 @@ public class LandingPageActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
+    }*/
 }
