@@ -8,10 +8,10 @@ import android.content.SharedPreferences;
  */
 //to check if the app has been opened before so it wont show the slide show again.
 public class SlideManager {
-    public static final String CHECK_FIRST ="com.example.konye.lingo.check_first";
-    Context context;
-    SharedPreferences preferences;
-    SharedPreferences.Editor editor;
+    private static final String CHECK_FIRST ="com.example.konye.lingo.check_first";
+    private Context context;
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
 
     public SlideManager(Context context){
         this.context = context;

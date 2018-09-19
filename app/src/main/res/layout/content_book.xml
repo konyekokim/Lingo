@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.konye.lingo.BookActivity"
+    tools:context="com.example.konye.lingo.ui.activities.BookActivity"
     tools:showIn="@layout/activity_book"
     tools:ignore="MissingPrefix">
 

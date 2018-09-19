@@ -5,7 +5,7 @@ package com.example.konye.lingo;
  */
 
 public class UserInformation {
-    String firstName, surname, username, email, password;
+    private String firstName, surname, username, email, password;
     int age;
 
     public UserInformation(String username, String password){

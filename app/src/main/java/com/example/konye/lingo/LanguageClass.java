@@ -9,7 +9,7 @@ public class LanguageClass {
     private String languageName;
     public enum Languages{ENGLAND, FRANCE, NIGERIA}
 
-    Languages languages;
+    private Languages languages;
 
     public LanguageClass(String languageName, Languages languages){
         this.languageName = languageName;
@@ -25,7 +25,7 @@ public class LanguageClass {
     public String getLanguageName(){
         return languageName;
     }
-    public Languages getLanguages(){
+    private Languages getLanguages(){
         return languages;
     }
     public int getRelatedDrawable(){

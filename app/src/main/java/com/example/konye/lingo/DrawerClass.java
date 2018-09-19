@@ -1,6 +1,5 @@
 package com.example.konye.lingo;
 
-import android.graphics.Color;
 
 /**
  * Created by KONYE on 7/6/2017.

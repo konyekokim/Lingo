@@ -5,7 +5,7 @@ package com.example.konye.lingo;
  */
 
 public class StoreFirstBookClass {
-    int firstBookImageResource;
+    private int firstBookImageResource;
 
     public StoreFirstBookClass(int categoryImageResource){
         this.firstBookImageResource = categoryImageResource;

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.konye.lingo.SlideViewActivity"
+    tools:context="com.example.konye.lingo.ui.activities.SlideViewActivity"
     tools:showIn="@layout/activity_slide_view">
 
     <android.support.v4.view.ViewPager

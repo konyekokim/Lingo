@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/slide_relative_layout"
-    tools:context="com.example.konye.lingo.SlideActivity"
+    tools:context="com.example.konye.lingo.ui.activities.SlideActivity"
     tools:showIn="@layout/activity_slide"
     tools:ignore="MissingPrefix">
     

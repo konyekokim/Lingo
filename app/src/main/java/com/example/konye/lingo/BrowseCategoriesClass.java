@@ -5,7 +5,7 @@ package com.example.konye.lingo;
  */
 
 public class BrowseCategoriesClass {
-    int categoryImageResource;
+    private int categoryImageResource;
 
     public BrowseCategoriesClass (int categoryImageResource){
         this.categoryImageResource = categoryImageResource;
