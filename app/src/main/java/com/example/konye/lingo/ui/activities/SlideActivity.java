@@ -29,7 +29,8 @@ public class SlideActivity extends AppCompatActivity {
     private LinearLayout dotsLayout, mahadumTextLayout;
     private ImageView welcomeMahadumView;
     private Button skipButton, nextButton,signInbutton, signUpbutton;
-    private int[] layouts;
+    private int[] images, backgrounds;
+    private String[] languages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +39,8 @@ public class SlideActivity extends AppCompatActivity {
 
         //making all the fonts montserrat.
         //changeWidgetsFont();
-        SlideManager slideManager = new SlideManager(this);
+        final SlideManager slideManager = new SlideManager(this);
         if(!slideManager.check()){
-            slideManager.setFirst(false);
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(intent);
         }
@@ -57,22 +57,32 @@ public class SlideActivity extends AppCompatActivity {
         signInbutton.setVisibility(View.GONE);
         signUpbutton.setVisibility(View.GONE);
         welcomeMahadumView.setVisibility(View.GONE);
-        layouts = new int[]{R.layout.slide_screen1,R.layout.slide_screen2,R.layout.slide_screen3,
-                            R.layout.slide_screen4,R.layout.slide_screen5,R.layout.slide_welcome};
+        images = new int[]{R.drawable.yoruba,R.drawable.igbo,R.drawable.hausa,
+                            R.drawable.french,R.drawable.english};
+        backgrounds = new int[]{R.drawable.bg_gradient1, R.drawable.bg_gradient2,
+                R.drawable.bg_gradient3, R.drawable.bg_gradient4, R.drawable.bg_gradient5};
+        languages = new String[]{"Yoruba", "Igbo", "Hausa", "French", "English"};
         addBottomDots(0);
         changeStatusBarColor();
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter();
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(languages, images, backgrounds);
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setOnPageChangeListener(viewPageChangeListener);
         skipButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-             viewPager.setCurrentItem(layouts.length);
+             /*viewPager.setCurrentItem(images.length);*/
+                skipButton.setVisibility(View.GONE);
+                dotsLayout.removeAllViews();
+                viewPager.setVisibility(View.GONE);
+                signInbutton.setVisibility(View.VISIBLE);
+                signUpbutton.setVisibility(View.VISIBLE);
+                welcomeMahadumView.setVisibility(View.VISIBLE);
+                slideManager.setFirst(false);
             }
         });
         nextButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 int currentItemNo = getItem(+1);
-                if(currentItemNo < layouts.length){
+                if(currentItemNo < images.length){
                     viewPager.setCurrentItem(currentItemNo);
                 }else{
                     //here currentItemNo == layouts.length hence final page
@@ -96,7 +106,7 @@ public class SlideActivity extends AppCompatActivity {
     }
 
     private void addBottomDots(int position){
-        TextView[] dots = new TextView[layouts.length];
+        TextView[] dots = new TextView[images.length];
         int[] colorActive = getResources().getIntArray(R.array.dot_active);
         int[] colorInActive = getResources().getIntArray(R.array.dot_inactive);
         dotsLayout.removeAllViews();
@@ -125,15 +135,12 @@ public class SlideActivity extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             addBottomDots(position);
-            if(position==layouts.length-1){
+            if(position == images.length-1){
                 nextButton.setText("");
-                skipButton.setVisibility(View.GONE);
-                dotsLayout.removeAllViews();
-                signInbutton.setVisibility(View.VISIBLE);
-                signUpbutton.setVisibility(View.VISIBLE);
-                welcomeMahadumView.setVisibility(View.VISIBLE);
-            }else{
+                skipButton.setText(String.valueOf("Finish"));
+            } else {
                 nextButton.setText(">");
+                skipButton.setText(String.valueOf("Skip"));
                 skipButton.setVisibility(View.VISIBLE);
                 signInbutton.setVisibility(View.GONE);
                 signUpbutton.setVisibility(View.GONE);
@@ -157,18 +164,31 @@ public class SlideActivity extends AppCompatActivity {
 
     public class ViewPagerAdapter extends PagerAdapter{
         private LayoutInflater layoutInflater;
+        private String[] langauges;
+        private int[] images, backgrounds;
+        public ViewPagerAdapter(String[] languages, int[] images, int[] backgrounds) {
+            this.images = images;
+            this.backgrounds = backgrounds;
+            this.langauges = languages;
+        }
         @NonNull
         @Override
         public Object instantiateItem(@NonNull ViewGroup container, int position) {
             layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View v = layoutInflater.inflate(layouts[position], container, false);
+            View v = layoutInflater.inflate(R.layout.slide_screen1, container, false);
+            if ((langauges != null && langauges.length > position) &&
+                    (images != null && images.length > position)) {
+                ((ImageView) v.findViewById(R.id.language_image)).setImageResource(images[position]);
+                ((TextView) v.findViewById(R.id.language)).setText(langauges[position]);
+                ((LinearLayout) v.findViewById(R.id.parent)).setBackgroundResource(backgrounds[position]);
+            }
             container.addView(v);
             return v;
         }
 
         @Override
         public int getCount() {
-            return layouts.length;
+            return images.length;
         }
 
         @Override
