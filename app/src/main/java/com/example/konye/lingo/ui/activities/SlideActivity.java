@@ -20,6 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.konye.lingo.R;
+import com.example.konye.lingo.ui.activities.login.LoginActivity;
+import com.example.konye.lingo.ui.activities.register.RegisterActivity;
 import com.example.konye.lingo.utils.SlideManager;
 
 public class SlideActivity extends AppCompatActivity {
@@ -137,10 +139,12 @@ public class SlideActivity extends AppCompatActivity {
             addBottomDots(position);
             if(position == images.length-1){
                 nextButton.setText("");
+                nextButton.setVisibility(View.GONE);
                 skipButton.setText(String.valueOf("Finish"));
             } else {
                 nextButton.setText(">");
                 skipButton.setText(String.valueOf("Skip"));
+                nextButton.setVisibility(View.VISIBLE);
                 skipButton.setVisibility(View.VISIBLE);
                 signInbutton.setVisibility(View.GONE);
                 signUpbutton.setVisibility(View.GONE);
@@ -180,7 +184,7 @@ public class SlideActivity extends AppCompatActivity {
                     (images != null && images.length > position)) {
                 ((ImageView) v.findViewById(R.id.language_image)).setImageResource(images[position]);
                 ((TextView) v.findViewById(R.id.language)).setText(langauges[position]);
-                ((LinearLayout) v.findViewById(R.id.parent)).setBackgroundResource(backgrounds[position]);
+                v.findViewById(R.id.parent).setBackgroundResource(backgrounds[position]);
             }
             container.addView(v);
             return v;

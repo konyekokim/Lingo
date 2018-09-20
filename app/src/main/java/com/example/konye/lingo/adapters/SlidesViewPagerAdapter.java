@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.konye.lingo.ui.activities.LoginActivity;
+import com.example.konye.lingo.ui.activities.login.LoginActivity;
 import com.example.konye.lingo.R;
 import com.example.konye.lingo.utils.SlidesClass;
 

@@ -1,13 +1,23 @@
 package com.example.konye.lingo;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+
+import com.example.konye.lingo.di.component.AppComponent;
+import com.example.konye.lingo.di.component.DaggerAppComponent;
+import com.example.konye.lingo.di.module.AppModule;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Mahadum extends Application {
 
+    AppComponent component;
+
+    public static Mahadum get(Activity activity) {
+        return (Mahadum) activity.getApplication();
+    }
 
     @Override
     public void onCreate() {
@@ -17,6 +27,14 @@ public class Mahadum extends Application {
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
+        component = DaggerAppComponent.builder()
+                .appModule(new AppModule(this))
+                .build();
+        component.inject(this);
+    }
+
+    public AppComponent getAppComponent() {
+        return component;
     }
 
     @Override
@@ -24,4 +42,5 @@ public class Mahadum extends Application {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(base));
 
     }
+
 }

@@ -1,7 +1,6 @@
-package com.example.konye.lingo.ui.activities;
+package com.example.konye.lingo.ui.activities.register;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,10 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.konye.lingo.R;
+import com.example.konye.lingo.ui.activities.login.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
-
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class RegisterActivity extends AppCompatActivity {
 

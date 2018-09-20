@@ -1,4 +1,4 @@
-package com.example.konye.lingo.ui.activities;
+package com.example.konye.lingo.ui.activities.login;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,7 +13,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.konye.lingo.Mahadum;
 import com.example.konye.lingo.R;
+import com.example.konye.lingo.di.component.AppComponent;
+import com.example.konye.lingo.di.qaulifier.ActivityContext;
+import com.example.konye.lingo.di.qaulifier.AppContext;
+import com.example.konye.lingo.ui.activities.LandingPageActivity;
+import com.example.konye.lingo.ui.activities.login.di.LoginActivityComponent;
+import com.example.konye.lingo.ui.activities.login.di.LoginActivityContextModule;
+import com.example.konye.lingo.ui.activities.login.di.LoginActivityMvpModule;
+import com.example.konye.lingo.ui.activities.register.RegisterActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.BufferedReader;
@@ -28,14 +37,26 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import javax.inject.Inject;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements LoginContract.View{
 
     EditText editLoginEmail, editLoginPassword;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    private LoginActivityComponent loginActivityComponent;
+
+    @Inject
+    @AppContext
+    public Context mContext;
+
+    @Inject
+    @ActivityContext
+    public Context activityContext;
+
+    @Inject
+    LoginPresenter presenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +68,13 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(),LanguageListActivity.class);
             startActivity(intent);
         }*/
-
+        AppComponent component = Mahadum.get(this).getAppComponent();
+        loginActivityComponent = DaggerLoginActivityComponent.builder()
+                .loginActivityContextModule(new LoginActivityContextModule(this))
+                .loginActivityMvpModule(new LoginActivityMvpModule(this))
+                .appComponent(component)
+                .build();
+        loginActivityComponent.inject(this);
         progressDialog = new ProgressDialog(this);
         //adding necessary widgets.
         editLoginEmail = findViewById(R.id.login_email_editView);
@@ -55,20 +82,14 @@ public class LoginActivity extends AppCompatActivity {
         Button loginButton = findViewById(R.id.login_button);
         TextView signUpTextView = findViewById(R.id.sign_up_textVIew);
 
-        loginButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                //getUserDetailsAndCheckEmptyAndRegisterUser();
-                Intent intent = new Intent(getApplicationContext(), LandingPageActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        loginButton.setOnClickListener(v -> {
+            //getUserDetailsAndCheckEmptyAndRegisterUser();
+
         });
-        signUpTextView.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),RegisterActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        signUpTextView.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),RegisterActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 
@@ -121,6 +142,38 @@ public class LoginActivity extends AppCompatActivity {
         backgroundTask.execute(method, email, password);
     }
 
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void showComplete() {
+
+    }
+
+    @Override
+    public void showError(String call, String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onLoginSuccess() {
+        Intent intent = new Intent(getApplicationContext(), LandingPageActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void onLogout() {
+
+    }
+
     /*private void changeWidgetsFont(){
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("helvetica_font_normal.ttf")
@@ -151,7 +204,7 @@ public class LoginActivity extends AppCompatActivity {
         String charsetISO = "iso-8859-1";
         public boolean loginResult = false;
 
-        BackgroundTask(Context context){
+        public BackgroundTask(Context context){
             this.context = context;
         }
 

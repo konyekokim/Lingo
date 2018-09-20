@@ -31,12 +31,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activities.LoginActivity"
+            android:name=".ui.activities.login.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activities.RegisterActivity"
+            android:name=".ui.activities.register.RegisterActivity"
             android:label="@string/title_activity_register"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
