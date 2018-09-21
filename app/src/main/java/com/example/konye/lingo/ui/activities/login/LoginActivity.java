@@ -19,6 +19,7 @@ import com.example.konye.lingo.di.component.AppComponent;
 import com.example.konye.lingo.di.qaulifier.ActivityContext;
 import com.example.konye.lingo.di.qaulifier.AppContext;
 import com.example.konye.lingo.ui.activities.LandingPageActivity;
+import com.example.konye.lingo.ui.activities.login.di.DaggerLoginActivityComponent;
 import com.example.konye.lingo.ui.activities.login.di.LoginActivityComponent;
 import com.example.konye.lingo.ui.activities.login.di.LoginActivityContextModule;
 import com.example.konye.lingo.ui.activities.login.di.LoginActivityMvpModule;

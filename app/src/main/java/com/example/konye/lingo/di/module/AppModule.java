@@ -2,11 +2,9 @@ package com.example.konye.lingo.di.module;
 
 import android.content.Context;
 
-import com.example.konye.lingo.api.ApiService;
-import com.example.konye.lingo.api.PrefManager;
+import com.example.konye.lingo.data.ApiService;
 import com.example.konye.lingo.di.qaulifier.AppContext;
 import com.example.konye.lingo.di.scope.AppScope;
-import com.google.gson.Gson;
 
 import java.util.concurrent.TimeUnit;
 
@@ -73,11 +71,5 @@ public class AppModule {
     @AppScope
     public ApiService providesApiService(Retrofit retrofit){
         return retrofit.create(ApiService.class);
-    }
-
-    @Provides
-    @AppScope
-    PrefManager providesPrefManager(Gson gson) {
-        return new PrefManager(context, gson.toString());
     }
 }

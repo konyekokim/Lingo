@@ -2,8 +2,8 @@ package com.example.konye.lingo.ui.activities.login;
 
 import android.util.Log;
 
-import com.example.konye.lingo.api.ApiService;
-import com.example.konye.lingo.api.PrefManager;
+import com.example.konye.lingo.data.ApiService;
+import com.example.konye.lingo.data.RealmService;
 import com.example.konye.lingo.models.AuthResponse;
 import com.example.konye.lingo.models.LoginUser;
 
@@ -18,19 +18,19 @@ import retrofit2.Response;
 public class LoginPresenter implements LoginContract.Presenter {
 
     private ApiService apiService;
-    private PrefManager prefManager;
+    private RealmService realmService;
     private LoginContract.View view;
 
     @Inject
-    public LoginPresenter(ApiService apiService, PrefManager prefManager, LoginContract.View view) {
+    public LoginPresenter(ApiService apiService, RealmService realmService, LoginContract.View view) {
         this.apiService = apiService;
-        this.prefManager = prefManager;
+        this.realmService = realmService;
         this.view = view;
     }
 
     @Override
     public void logout() {
-        prefManager.logOut();
+        //prefManager.logOut();
         view.onLogout();
     }
 
@@ -50,7 +50,7 @@ public class LoginPresenter implements LoginContract.Presenter {
                     @Override
                     public void onNext(Response<AuthResponse> response) {
                         String token = response.headers().get("MAHADUM-TOKEN");
-                        prefManager.setValue("token", token);
+                        //prefManager.setValue("token", token);
                         AuthResponse result = response.body();
 
                         view.hideProgress();
