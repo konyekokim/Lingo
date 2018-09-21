@@ -31,7 +31,7 @@ public class BookActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.lang_action_bar_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         TextView actionBarTextView = findViewById(R.id.my_text);
-        actionBarTextView.setText("Book");
+        actionBarTextView.setText(String.valueOf("Book"));
 
         Intent intent = getIntent();
         bookImgViewResource = intent.getIntExtra(StoreActivity.BOOK_FIRST_IMG_VIEW,R.drawable.book1);
@@ -42,19 +42,13 @@ public class BookActivity extends AppCompatActivity {
         Button previewButton = findViewById(R.id.preview_button);
         Button purchaseButton = findViewById(R.id.purchase_button);
         TextView aboutTextView = findViewById(R.id.about_textView);
-        bookImgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PdfReaderActivity.class);
-                startActivity(intent);
-            }
+        bookImgView.setOnClickListener(view -> {
+            Intent intent1 = new Intent(getApplicationContext(), PdfReaderActivity.class);
+            startActivity(intent1);
         });
-        previewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),PdfReaderActivity.class);
-                startActivity(intent);
-            }
+        previewButton.setOnClickListener(view -> {
+            Intent intent12 = new Intent(getApplicationContext(),PdfReaderActivity.class);
+            startActivity(intent12);
         });
 
     }

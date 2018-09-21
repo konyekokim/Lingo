@@ -73,67 +73,52 @@ public class LanguageHomeActivity extends AppCompatActivity {
         DrawerAdapter drawerAdapter = new DrawerAdapter(getApplicationContext(),R.layout.drawer_listview_item,
                 drawerClasses());
         drawerListView.setAdapter(drawerAdapter);
-        drawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch(position){
-                    case 0:
-                        drawerLayout.closeDrawer(drawerListView);
-                        //collect english data from API and show on widgets
-                        break;
-                    case 1:
-                        drawerLayout.closeDrawer(drawerListView);
-                        //collect french data from API and show on widgets
-                        break;
-                    case 2:
-                        drawerLayout.closeDrawer(drawerListView);
-                        //collect yoruba data from API and show on widgets
-                        break;
-                    case 3:
-                        drawerLayout.closeDrawer(drawerListView);
-                        //collect igbo data from API and show on widgets
-                        break;
-                    case 4:
-                        drawerLayout.closeDrawer(drawerListView);
-                        //collect hausa data from API and show on widgets
-                        break;
-                    case 5:
-                        drawerLayout.closeDrawer(drawerListView);
-                        //collect efik data from API and show on widgets
-                        break;
-                }
+        drawerListView.setOnItemClickListener((parent, view, position, id) -> {
+            switch(position){
+                case 0:
+                    drawerLayout.closeDrawer(drawerListView);
+                    //collect english data from API and show on widgets
+                    break;
+                case 1:
+                    drawerLayout.closeDrawer(drawerListView);
+                    //collect french data from API and show on widgets
+                    break;
+                case 2:
+                    drawerLayout.closeDrawer(drawerListView);
+                    //collect yoruba data from API and show on widgets
+                    break;
+                case 3:
+                    drawerLayout.closeDrawer(drawerListView);
+                    //collect igbo data from API and show on widgets
+                    break;
+                case 4:
+                    drawerLayout.closeDrawer(drawerListView);
+                    //collect hausa data from API and show on widgets
+                    break;
+                case 5:
+                    drawerLayout.closeDrawer(drawerListView);
+                    //collect efik data from API and show on widgets
+                    break;
             }
         });
-        progressTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressShowing = !progressShowing;
-                progressTv.setText(progressShowing? progressInLanguageString + "%": "Tap to see your progress");
-            }
+        progressTv.setOnClickListener(v -> {
+            progressShowing = !progressShowing;
+            progressTv.setText(progressShowing? progressInLanguageString + "%": "Tap to see your progress");
         });
-        stageOneTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        stageOneTv.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageActivity.class);
+            startActivity(intent);
+            finish();
         });
-        stageTwoTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        stageTwoTv.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageActivity.class);
+            startActivity(intent);
+            finish();
         });
-        stageThreeTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        stageThreeTv.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 

@@ -80,14 +80,11 @@ public class StoreActivity extends AppCompatActivity {
         } else{
             //we are not connected to a network
             Snackbar.make(coordinatorLayout, "Oops! No internet connection", Snackbar.LENGTH_INDEFINITE)
-                    .setAction("RETRY", new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = getIntent();
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                            startActivity(intent);
-                            finish();
-                        }
+                    .setAction("RETRY", view -> {
+                        Intent intent = getIntent();
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent);
+                        finish();
                     }).setActionTextColor(Color.parseColor("#FC7900")).show();
         }
     }

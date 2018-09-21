@@ -23,12 +23,9 @@ public class LandingPageActivity extends AppCompatActivity {
 
         //changeWidgetsFont();
         bookStoreButton = findViewById(R.id.book_store_button);
-        bookStoreButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), StoreActivity.class);
-                startActivity(intent);
-            }
+        bookStoreButton.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), StoreActivity.class);
+            startActivity(intent);
         });
     }
 

@@ -45,13 +45,10 @@ public class QuizViewActivity extends AppCompatActivity {
         quizViewPager.addOnPageChangeListener(viewPageChangeListener);
         nextQuizButton.setVisibility(View.VISIBLE);
 
-        nextQuizButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int nextPageNum = getItem(+1);
-                if(nextPageNum < totalNumPages){
-                    quizViewPager.setCurrentItem(nextPageNum);
-                }
+        nextQuizButton.setOnClickListener(v -> {
+            int nextPageNum = getItem(+1);
+            if(nextPageNum < totalNumPages){
+                quizViewPager.setCurrentItem(nextPageNum);
             }
         });
     }

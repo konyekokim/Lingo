@@ -48,19 +48,13 @@ public class VideoActivity extends AppCompatActivity {
         GridView gridView = findViewById(R.id.gridView);
         VideosGridAdapter gridAdapter = new VideosGridAdapter(this, imageRes,names);
         gridView.setAdapter(gridAdapter);
-        bookImgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PdfReaderActivity.class);
-                startActivity(intent);
-            }
+        bookImgView.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), PdfReaderActivity.class);
+            startActivity(intent);
         });
-        previewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),PdfReaderActivity.class);
-                startActivity(intent);
-            }
+        previewButton.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(),PdfReaderActivity.class);
+            startActivity(intent);
         });
     }
 

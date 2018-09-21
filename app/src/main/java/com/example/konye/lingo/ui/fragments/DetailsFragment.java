@@ -2,6 +2,7 @@ package com.example.konye.lingo.ui.fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,7 @@ public class DetailsFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View detailsView = inflater.inflate(R.layout.details_layout,container,false);
         TextView aboutTheBook = detailsView.findViewById(R.id.about_the_book);

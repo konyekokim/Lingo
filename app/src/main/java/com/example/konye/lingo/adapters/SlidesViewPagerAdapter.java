@@ -60,12 +60,9 @@ public class SlidesViewPagerAdapter extends PagerAdapter {
         contentView.setText(slidesClasses.get(position).getSlidesSubtitle());
         imageView.setImageResource(slidesClasses.get(position).getImgThumbnail());
 
-        titleView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(slidesItemView.getContext(), LoginActivity.class);
-                slidesItemView.getContext().startActivity(intent);
-            }
+        titleView.setOnClickListener(v -> {
+            Intent intent = new Intent(slidesItemView.getContext(), LoginActivity.class);
+            slidesItemView.getContext().startActivity(intent);
         });
         container.addView(slidesItemView);
 

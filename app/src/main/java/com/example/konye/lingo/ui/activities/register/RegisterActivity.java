@@ -39,21 +39,17 @@ public class RegisterActivity extends AppCompatActivity {
         Button registerButton = findViewById(R.id.register_button);
         TextView signInTextView = findViewById(R.id.sign_in_textVIew);
 
-        registerButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                //getUserDetailsAndCheckEmptyAndRegisterUser();
-                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        registerButton.setOnClickListener(v -> {
+            //getUserDetailsAndCheckEmptyAndRegisterUser();
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
 
-        signInTextView.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        signInTextView.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 

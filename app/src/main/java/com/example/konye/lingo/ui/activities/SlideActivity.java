@@ -69,41 +69,33 @@ public class SlideActivity extends AppCompatActivity {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(languages, images, backgrounds);
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setOnPageChangeListener(viewPageChangeListener);
-        skipButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-             /*viewPager.setCurrentItem(images.length);*/
-                skipButton.setVisibility(View.GONE);
-                dotsLayout.removeAllViews();
-                viewPager.setVisibility(View.GONE);
-                signInbutton.setVisibility(View.VISIBLE);
-                signUpbutton.setVisibility(View.VISIBLE);
-                welcomeMahadumView.setVisibility(View.VISIBLE);
-                slideManager.setFirst(false);
+        skipButton.setOnClickListener(v -> {
+         /*viewPager.setCurrentItem(images.length);*/
+            skipButton.setVisibility(View.GONE);
+            dotsLayout.removeAllViews();
+            viewPager.setVisibility(View.GONE);
+            signInbutton.setVisibility(View.VISIBLE);
+            signUpbutton.setVisibility(View.VISIBLE);
+            welcomeMahadumView.setVisibility(View.VISIBLE);
+            slideManager.setFirst(false);
+        });
+        nextButton.setOnClickListener(v -> {
+            int currentItemNo = getItem(+1);
+            if(currentItemNo < images.length){
+                viewPager.setCurrentItem(currentItemNo);
+            }else{
+                //here currentItemNo == layouts.length hence final page
             }
         });
-        nextButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                int currentItemNo = getItem(+1);
-                if(currentItemNo < images.length){
-                    viewPager.setCurrentItem(currentItemNo);
-                }else{
-                    //here currentItemNo == layouts.length hence final page
-                }
-            }
+        signInbutton.setOnClickListener(v -> {
+            Intent intent = new  Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
-        signInbutton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new  Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        signUpbutton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new  Intent(getApplicationContext(),RegisterActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        signUpbutton.setOnClickListener(v -> {
+            Intent intent = new  Intent(getApplicationContext(),RegisterActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 

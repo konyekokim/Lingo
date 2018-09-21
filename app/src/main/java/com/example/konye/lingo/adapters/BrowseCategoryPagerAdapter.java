@@ -50,12 +50,9 @@ public class BrowseCategoryPagerAdapter extends PagerAdapter {
         browseCategoryView = layoutInflater.inflate(R.layout.browse_categories_item,container,false);
         ImageView browseCategoryImageView = browseCategoryView.findViewById(R.id.browse_category_image_view);
         browseCategoryImageView.setImageResource(browseCategoriesClasses.get(position).getCategoryImageResource());
-        browseCategoryImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(browseCategoryView.getContext(), BookActivity.class);
-                browseCategoryView.getContext().startActivity(intent);
-            }
+        browseCategoryImageView.setOnClickListener(v -> {
+            Intent intent = new Intent(browseCategoryView.getContext(), BookActivity.class);
+            browseCategoryView.getContext().startActivity(intent);
         });
         container.addView(browseCategoryView);
         return browseCategoryView;

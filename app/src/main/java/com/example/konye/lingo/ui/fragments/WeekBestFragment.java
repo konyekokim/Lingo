@@ -3,6 +3,7 @@ package com.example.konye.lingo.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +26,7 @@ public class WeekBestFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View weekBestView = inflater.inflate(R.layout.weeks_best_layout, container, false);
         final ImageView firstImgView = weekBestView.findViewById(R.id.best_week_first_img);
@@ -38,29 +39,20 @@ public class WeekBestFragment extends Fragment {
         secondImgView.setImageResource(secondImage);
         thirdImgView.setImageResource(thirdImage);
 
-        firstImgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), BookActivity.class);
-                intent.putExtra(StoreActivity.BOOK_FIRST_IMG_VIEW,firstImage);
-                startActivity(intent);
-            }
+        firstImgView.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), BookActivity.class);
+            intent.putExtra(StoreActivity.BOOK_FIRST_IMG_VIEW,firstImage);
+            startActivity(intent);
         });
-        secondImgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), BookActivity.class);
-                intent.putExtra(StoreActivity.BOOK_FIRST_IMG_VIEW,secondImage);
-                startActivity(intent);
-            }
+        secondImgView.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), BookActivity.class);
+            intent.putExtra(StoreActivity.BOOK_FIRST_IMG_VIEW,secondImage);
+            startActivity(intent);
         });
-        thirdImgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), BookActivity.class);
-                intent.putExtra(StoreActivity.BOOK_FIRST_IMG_VIEW,thirdImage);
-                startActivity(intent);
-            }
+        thirdImgView.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), BookActivity.class);
+            intent.putExtra(StoreActivity.BOOK_FIRST_IMG_VIEW,thirdImage);
+            startActivity(intent);
         });
 
         return weekBestView;

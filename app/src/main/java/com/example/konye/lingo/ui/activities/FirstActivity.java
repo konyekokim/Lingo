@@ -16,14 +16,11 @@ public class FirstActivity extends AppCompatActivity {
         setFullScreen();
         setContentView(R.layout.activity_first);
         int WELCOME_TIMEOUT = 4000;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(getApplicationContext(), SlideActivity.class);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                startActivity(intent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(getApplicationContext(), SlideActivity.class);
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            startActivity(intent);
+            finish();
         }, WELCOME_TIMEOUT);
     }
 

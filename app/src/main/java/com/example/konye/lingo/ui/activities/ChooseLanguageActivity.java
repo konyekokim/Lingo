@@ -33,71 +33,47 @@ public class ChooseLanguageActivity extends AppCompatActivity {
         efikLayout = findViewById(R.id.efik_layout);
         storeButton = findViewById(R.id.store_button);
 
-        englishLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        englishLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
+            startActivity(intent);
+            finish();
         });
-        frenchLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        frenchLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
+            startActivity(intent);
+            finish();
         });
-        nigerianLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                layoutIsExpanded = !layoutIsExpanded;
-                yorubaLayout.setVisibility(layoutIsExpanded? View.VISIBLE : View.GONE);
-                igboLayout.setVisibility(layoutIsExpanded? View.VISIBLE : View.GONE);
-                hausaLayout.setVisibility(layoutIsExpanded? View.VISIBLE : View.GONE);
-                efikLayout.setVisibility(layoutIsExpanded? View.VISIBLE: View.GONE);
-            }
+        nigerianLayout.setOnClickListener(v -> {
+            layoutIsExpanded = !layoutIsExpanded;
+            yorubaLayout.setVisibility(layoutIsExpanded? View.VISIBLE : View.GONE);
+            igboLayout.setVisibility(layoutIsExpanded? View.VISIBLE : View.GONE);
+            hausaLayout.setVisibility(layoutIsExpanded? View.VISIBLE : View.GONE);
+            efikLayout.setVisibility(layoutIsExpanded? View.VISIBLE: View.GONE);
         });
-        yorubaLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        yorubaLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
+            startActivity(intent);
+            finish();
         });
-        igboLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        igboLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
+            startActivity(intent);
+            finish();
         });
-        hausaLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        hausaLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageHomeActivity.class);
+            startActivity(intent);
+            finish();
         });
-        efikLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LanguageActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        efikLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),LanguageActivity.class);
+            startActivity(intent);
+            finish();
         });
-        storeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),StoreActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        storeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(),StoreActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 

@@ -68,69 +68,48 @@ public class VideoViewActivity extends AppCompatActivity implements YouTubeThumb
         YouTubeThumbnailView youTubeThumbnailView = findViewById(R.id.youtube_thumbnail_view);
         youTubeThumbnailView.initialize(API_KEY,this);
 
-        youTubeThumbnailView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),VideoPlayActivity.class);
-                intent.putExtra(VIDEO_INDEX,languageVideoIndex);
-                startActivity(intent);
-                finish();
-            }
+        youTubeThumbnailView.setOnClickListener(v -> {
+            Intent intent1 = new Intent(getApplicationContext(),VideoPlayActivity.class);
+            intent1.putExtra(VIDEO_INDEX,languageVideoIndex);
+            startActivity(intent1);
+            finish();
         });
-        descTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //expand and make the video description show...
-                descIsExpanded = !descIsExpanded;
-                vidsDescTextView.setVisibility(descIsExpanded? View.VISIBLE: View.GONE);
-                vidsDescImg1.setImageResource(descIsExpanded?
-                        R.mipmap.ic_keyboard_arrow_up_black_24dp: R.mipmap.ic_keyboard_arrow_down_black_24dp);
-            }
+        descTextView.setOnClickListener(v -> {
+            //expand and make the video description show...
+            descIsExpanded = !descIsExpanded;
+            vidsDescTextView.setVisibility(descIsExpanded? View.VISIBLE: View.GONE);
+            vidsDescImg1.setImageResource(descIsExpanded?
+                    R.mipmap.ic_keyboard_arrow_up_black_24dp: R.mipmap.ic_keyboard_arrow_down_black_24dp);
         });
-        morevidsTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //expand and make the option for more videos show...
-                moreVidsExpanded = !moreVidsExpanded;
-                moreVidsLayout.setVisibility(moreVidsExpanded? View.VISIBLE: View.GONE);
-                vidsDescImg2.setImageResource(descIsExpanded?
-                        R.mipmap.ic_keyboard_arrow_up_black_24dp: R.mipmap.ic_keyboard_arrow_down_black_24dp);
-            }
+        morevidsTextView.setOnClickListener(v -> {
+            //expand and make the option for more videos show...
+            moreVidsExpanded = !moreVidsExpanded;
+            moreVidsLayout.setVisibility(moreVidsExpanded? View.VISIBLE: View.GONE);
+            vidsDescImg2.setImageResource(descIsExpanded?
+                    R.mipmap.ic_keyboard_arrow_up_black_24dp: R.mipmap.ic_keyboard_arrow_down_black_24dp);
         });
 
-        vidsDescImg1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                descIsExpanded = !descIsExpanded;
-                vidsDescTextView.setVisibility(descIsExpanded? View.VISIBLE: View.GONE);
-                vidsDescImg1.setImageResource(descIsExpanded?
-                        R.mipmap.ic_keyboard_arrow_up_black_24dp: R.mipmap.ic_keyboard_arrow_down_black_24dp);
-            }
+        vidsDescImg1.setOnClickListener(v -> {
+            descIsExpanded = !descIsExpanded;
+            vidsDescTextView.setVisibility(descIsExpanded? View.VISIBLE: View.GONE);
+            vidsDescImg1.setImageResource(descIsExpanded?
+                    R.mipmap.ic_keyboard_arrow_up_black_24dp: R.mipmap.ic_keyboard_arrow_down_black_24dp);
         });
-        vidsDescImg2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                moreVidsExpanded = !moreVidsExpanded;
-                moreVidsLayout.setVisibility(moreVidsExpanded? View.VISIBLE: View.GONE);
-                vidsDescImg2.setImageResource(moreVidsExpanded?
-                        R.mipmap.ic_keyboard_arrow_up_black_24dp: R.mipmap.ic_keyboard_arrow_down_black_24dp);
-            }
+        vidsDescImg2.setOnClickListener(v -> {
+            moreVidsExpanded = !moreVidsExpanded;
+            moreVidsLayout.setVisibility(moreVidsExpanded? View.VISIBLE: View.GONE);
+            vidsDescImg2.setImageResource(moreVidsExpanded?
+                    R.mipmap.ic_keyboard_arrow_up_black_24dp: R.mipmap.ic_keyboard_arrow_down_black_24dp);
         });
-        moreVidsthumb1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), VideoPlayActivity.class);
-                intent.putExtra(VIDEO_INDEX,languageVideoIndex);
-                startActivity(intent);
-            }
+        moreVidsthumb1.setOnClickListener(v -> {
+            Intent intent12 = new Intent(getApplicationContext(), VideoPlayActivity.class);
+            intent12.putExtra(VIDEO_INDEX,languageVideoIndex);
+            startActivity(intent12);
         });
-        moreVidsthumb2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), VideoPlayActivity.class);
-                intent.putExtra(VIDEO_INDEX,languageVideoIndex);
-                startActivity(intent);
-            }
+        moreVidsthumb2.setOnClickListener(v -> {
+            Intent intent13 = new Intent(getApplicationContext(), VideoPlayActivity.class);
+            intent13.putExtra(VIDEO_INDEX,languageVideoIndex);
+            startActivity(intent13);
         });
     }
 

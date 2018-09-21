@@ -1,8 +1,12 @@
 package com.example.konye.lingo.api;
 
+import com.example.konye.lingo.models.ChangePassword;
 import com.example.konye.lingo.models.CreateUser;
 import com.example.konye.lingo.models.AuthResponse;
 import com.example.konye.lingo.models.LoginUser;
+import com.example.konye.lingo.models.PasswordRequest;
+import com.example.konye.lingo.models.PasswordResponse;
+import com.example.konye.lingo.models.UpdateUser;
 
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
@@ -21,8 +25,20 @@ public interface ApiService {
     @POST("create")
     Observable<Response<AuthResponse>> registerUser(@Body CreateUser user);
 
+    @POST("update")
+    Observable<Response<AuthResponse>> updateUser(@Header("MAHADUM-TOKEN") String token,
+                                                  @Body UpdateUser user);
+
     @POST("login")
     Observable<Response<AuthResponse>> login(@Body LoginUser login);
+
+    @POST("validatepw")
+    Observable<Response<PasswordResponse>> validatePassword(@Header("MAHADUM-TOKEN") String token,
+                                                            @Body PasswordRequest password);
+
+    @POST("changepw")
+    Observable<Response<PasswordResponse>> changePassword(@Header("MAHADUM-TOKEN") String token,
+                                                          @Body ChangePassword change);
 
     //Parent Endpoints
     @POST("parent/billing")

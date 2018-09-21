@@ -70,57 +70,45 @@ public class QuizViewPagerAdapter extends PagerAdapter {
         imgAns3.setImageResource(quizType1list.get(position).getImgAns3());
         imgAns4.setImageResource(quizType1list.get(position).getImgAns4());
 
-        imgAns1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ans1 = quizItemView.findViewById(R.id.ans1);
-                ans2 = quizItemView.findViewById(R.id.ans2);
-                ans3 = quizItemView.findViewById(R.id.ans3);
-                ans4 = quizItemView.findViewById(R.id.ans4);
-                ans1.setVisibility(View.VISIBLE);
-                ans2.setVisibility(View.VISIBLE);
-                ans3.setVisibility(View.VISIBLE);
-                ans4.setVisibility(View.VISIBLE);
-            }
+        imgAns1.setOnClickListener(v -> {
+            ans1 = quizItemView.findViewById(R.id.ans1);
+            ans2 = quizItemView.findViewById(R.id.ans2);
+            ans3 = quizItemView.findViewById(R.id.ans3);
+            ans4 = quizItemView.findViewById(R.id.ans4);
+            ans1.setVisibility(View.VISIBLE);
+            ans2.setVisibility(View.VISIBLE);
+            ans3.setVisibility(View.VISIBLE);
+            ans4.setVisibility(View.VISIBLE);
         });
-        imgAns2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ans1 = quizItemView.findViewById(R.id.ans1);
-                ans2 = quizItemView.findViewById(R.id.ans2);
-                ans3 = quizItemView.findViewById(R.id.ans3);
-                ans4 = quizItemView.findViewById(R.id.ans4);
-                ans1.setVisibility(View.VISIBLE);
-                ans2.setVisibility(View.VISIBLE);
-                ans3.setVisibility(View.VISIBLE);
-                ans4.setVisibility(View.VISIBLE);
-            }
+        imgAns2.setOnClickListener(v -> {
+            ans1 = quizItemView.findViewById(R.id.ans1);
+            ans2 = quizItemView.findViewById(R.id.ans2);
+            ans3 = quizItemView.findViewById(R.id.ans3);
+            ans4 = quizItemView.findViewById(R.id.ans4);
+            ans1.setVisibility(View.VISIBLE);
+            ans2.setVisibility(View.VISIBLE);
+            ans3.setVisibility(View.VISIBLE);
+            ans4.setVisibility(View.VISIBLE);
         });
-        imgAns3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ans1 = quizItemView.findViewById(R.id.ans1);
-                ans2 = quizItemView.findViewById(R.id.ans2);
-                ans3 = quizItemView.findViewById(R.id.ans3);
-                ans4 = quizItemView.findViewById(R.id.ans4);
-                ans1.setVisibility(View.VISIBLE);
-                ans2.setVisibility(View.VISIBLE);
-                ans3.setVisibility(View.VISIBLE);
-                ans4.setVisibility(View.VISIBLE);
-            }
+        imgAns3.setOnClickListener(v -> {
+            ans1 = quizItemView.findViewById(R.id.ans1);
+            ans2 = quizItemView.findViewById(R.id.ans2);
+            ans3 = quizItemView.findViewById(R.id.ans3);
+            ans4 = quizItemView.findViewById(R.id.ans4);
+            ans1.setVisibility(View.VISIBLE);
+            ans2.setVisibility(View.VISIBLE);
+            ans3.setVisibility(View.VISIBLE);
+            ans4.setVisibility(View.VISIBLE);
         });
-        imgAns4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ans1 = quizItemView.findViewById(R.id.ans1);
-                ans2 = quizItemView.findViewById(R.id.ans2);
-                ans3 = quizItemView.findViewById(R.id.ans3);
-                ans4 = quizItemView.findViewById(R.id.ans4);
-                ans1.setVisibility(View.VISIBLE);
-                ans2.setVisibility(View.VISIBLE);
-                ans3.setVisibility(View.VISIBLE);
-                ans4.setVisibility(View.VISIBLE);
-            }
+        imgAns4.setOnClickListener(v -> {
+            ans1 = quizItemView.findViewById(R.id.ans1);
+            ans2 = quizItemView.findViewById(R.id.ans2);
+            ans3 = quizItemView.findViewById(R.id.ans3);
+            ans4 = quizItemView.findViewById(R.id.ans4);
+            ans1.setVisibility(View.VISIBLE);
+            ans2.setVisibility(View.VISIBLE);
+            ans3.setVisibility(View.VISIBLE);
+            ans4.setVisibility(View.VISIBLE);
         });
 
         container.addView(quizItemView);

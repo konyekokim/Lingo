@@ -38,26 +38,20 @@ public class SlideFragment extends Fragment {
         slideView =  inflater.inflate(R.layout.slides_view,container,false);
         ListView slideListView = slideView.findViewById(R.id.slides_list_view);
         ImageView continueButton = slideView.findViewById(R.id.continue_btn);
-        continueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), SlideViewActivity.class);
-                startActivity(intent);
-            }
+        continueButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), SlideViewActivity.class);
+            startActivity(intent);
         });
         addSlidesListData();
         SlidesAdapter slidesAdapter = new SlidesAdapter(getContext(),R.layout.slides_view_row,addSlidesListData());
         slideListView.setAdapter(slidesAdapter);
-        slideListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position == slidesClasses.size()-1){
-                    Intent intent = new Intent(getContext(),QuizViewActivity.class);
-                    startActivity(intent);
-                }else {
-                    Intent intent = new Intent(getContext(), SlideViewActivity.class);
-                    startActivity(intent);
-                }
+        slideListView.setOnItemClickListener((parent, view, position, id) -> {
+            if(position == slidesClasses.size()-1){
+                Intent intent = new Intent(getContext(),QuizViewActivity.class);
+                startActivity(intent);
+            }else {
+                Intent intent = new Intent(getContext(), SlideViewActivity.class);
+                startActivity(intent);
             }
         });
         return slideView;

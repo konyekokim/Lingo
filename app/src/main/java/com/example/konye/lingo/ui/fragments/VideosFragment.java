@@ -3,6 +3,7 @@ package com.example.konye.lingo.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,18 +32,15 @@ public class VideosFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         videosView = inflater.inflate(R.layout.mahadum_books_view,container, false);
         GridView gridView = videosView.findViewById(R.id.gridView);
         VideosGridAdapter gridAdapter = new VideosGridAdapter(getContext(),imageRes,names);
         gridView.setAdapter(gridAdapter);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getContext(), VideoActivity.class);
-                startActivity(intent);
-            }
+        gridView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(getContext(), VideoActivity.class);
+            startActivity(intent);
         });
         return videosView;
     }

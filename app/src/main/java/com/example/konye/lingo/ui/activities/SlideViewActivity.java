@@ -54,19 +54,11 @@ public class SlideViewActivity extends AppCompatActivity {
         PagerAdapter slidesViewPagerAdapter = new SlidesViewPagerAdapter(this,addSlidesListData());
         viewPager.setAdapter(slidesViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPageChangeListener);
-        prevButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(getPrevItem());
-            }
-        });
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int nextPageNumber = getItem(+1);
-                if(nextPageNumber < totalNumOfPages){
-                    viewPager.setCurrentItem(nextPageNumber);
-                }
+        prevButton.setOnClickListener(v -> viewPager.setCurrentItem(getPrevItem()));
+        nextButton.setOnClickListener(v -> {
+            int nextPageNumber = getItem(+1);
+            if(nextPageNumber < totalNumOfPages){
+                viewPager.setCurrentItem(nextPageNumber);
             }
         });
     }
