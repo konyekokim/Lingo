@@ -3,10 +3,13 @@ package com.example.konye.lingo.api;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import javax.inject.Inject;
+
 public class PrefManager {
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mSharedPreferencesEditor;
 
+    @Inject
     public PrefManager(Context context, String myPreferences) {
         mSharedPreferences = context.getSharedPreferences(myPreferences, Context.MODE_PRIVATE);
         mSharedPreferencesEditor = mSharedPreferences.edit();

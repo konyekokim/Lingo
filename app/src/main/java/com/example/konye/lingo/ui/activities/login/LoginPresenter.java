@@ -18,19 +18,17 @@ import retrofit2.Response;
 public class LoginPresenter implements LoginContract.Presenter {
 
     private ApiService apiService;
-    private PrefManager prefManager;
     private LoginContract.View view;
 
     @Inject
-    public LoginPresenter(ApiService apiService, PrefManager prefManager, LoginContract.View view) {
+    public LoginPresenter(ApiService apiService, LoginContract.View view) {
         this.apiService = apiService;
-        this.prefManager = prefManager;
         this.view = view;
     }
 
     @Override
     public void logout() {
-        prefManager.logOut();
+        //prefManager.logOut();
         view.onLogout();
     }
 
@@ -50,7 +48,7 @@ public class LoginPresenter implements LoginContract.Presenter {
                     @Override
                     public void onNext(Response<AuthResponse> response) {
                         String token = response.headers().get("MAHADUM-TOKEN");
-                        prefManager.setValue("token", token);
+                        //prefManager.setValue("token", token);
                         AuthResponse result = response.body();
 
                         view.hideProgress();

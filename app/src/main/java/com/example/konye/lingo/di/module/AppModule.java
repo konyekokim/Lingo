@@ -74,10 +74,4 @@ public class AppModule {
     public ApiService providesApiService(Retrofit retrofit){
         return retrofit.create(ApiService.class);
     }
-
-    @Provides
-    @AppScope
-    PrefManager providesPrefManager(Gson gson) {
-        return new PrefManager(context, gson.toString());
-    }
 }

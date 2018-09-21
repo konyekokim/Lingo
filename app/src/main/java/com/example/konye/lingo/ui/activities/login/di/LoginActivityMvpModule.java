@@ -26,8 +26,7 @@ public class LoginActivityMvpModule {
 
     @Provides
     @ActivityScope
-    LoginPresenter providesPresenter(ApiService apiService, PrefManager prefManager,
-                                     LoginContract.View view) {
-        return new LoginPresenter(apiService, prefManager, view);
+    LoginPresenter providesPresenter(ApiService apiService, LoginContract.View view) {
+        return new LoginPresenter(apiService, view);
     }
 }
