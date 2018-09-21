@@ -1,8 +1,9 @@
-package com.example.konye.lingo.ui.activities.login;
+package com.example.konye.lingo.ui.activities.auth;
 
+import com.example.konye.lingo.models.CreateUser;
 import com.example.konye.lingo.models.LoginUser;
 
-public interface LoginContract {
+public interface AuthContract {
 
     interface View {
         void hideProgress();
@@ -22,5 +23,7 @@ public interface LoginContract {
         void logout();
 
         void login(LoginUser user);
+
+        void register(CreateUser user);
     }
 }

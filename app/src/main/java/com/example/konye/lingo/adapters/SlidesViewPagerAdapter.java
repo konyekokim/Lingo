@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.konye.lingo.ui.activities.login.LoginActivity;
+import com.example.konye.lingo.ui.activities.auth.LoginFragment;
 import com.example.konye.lingo.R;
 import com.example.konye.lingo.utils.SlidesClass;
 
@@ -61,7 +61,7 @@ public class SlidesViewPagerAdapter extends PagerAdapter {
         imageView.setImageResource(slidesClasses.get(position).getImgThumbnail());
 
         titleView.setOnClickListener(v -> {
-            Intent intent = new Intent(slidesItemView.getContext(), LoginActivity.class);
+            Intent intent = new Intent(slidesItemView.getContext(), LoginFragment.class);
             slidesItemView.getContext().startActivity(intent);
         });
         container.addView(slidesItemView);

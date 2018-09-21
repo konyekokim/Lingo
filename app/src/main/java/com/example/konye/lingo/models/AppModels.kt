@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class AuthResponse(@SerializedName("status")
                               @Expose
-                              var status: String? = "",
+                              val status: String,
                         @SerializedName("MAHADUM-TOKEN")
                               @Expose
                               var auth_token: String? = "",

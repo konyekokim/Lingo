@@ -38,7 +38,7 @@ dependencies {
     implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
-    implementation 'com.google.firebase:firebase-auth:16.0.3'
+    //implementation 'com.google.firebase:firebase-auth:16.0.3'
     //implementation 'com.google.firebase:firebase-core'
     implementation 'com.akexorcist:RoundCornerProgressBar:2.0.3'
     implementation 'com.github.HotBitmapGG:RingProgressBar:V1.2.2'
@@ -64,8 +64,8 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.17'
     implementation 'com.google.dagger:dagger-android:2.17'
     implementation 'com.google.dagger:dagger-android-support:2.17'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.17'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.17'
+    kapt 'com.google.dagger:dagger-android-processor:2.17'
+    kapt 'com.google.dagger:dagger-compiler:2.17'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
@@ -83,3 +83,4 @@ repositories {
 realm {
     syncEnabled = true
 }
+apply plugin: 'kotlin-android-extensions'
