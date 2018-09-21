@@ -2,8 +2,8 @@ package com.example.konye.lingo.ui.activities.login;
 
 import android.util.Log;
 
-import com.example.konye.lingo.api.ApiService;
-import com.example.konye.lingo.api.PrefManager;
+import com.example.konye.lingo.data.ApiService;
+import com.example.konye.lingo.data.RealmService;
 import com.example.konye.lingo.models.AuthResponse;
 import com.example.konye.lingo.models.LoginUser;
 
@@ -18,11 +18,13 @@ import retrofit2.Response;
 public class LoginPresenter implements LoginContract.Presenter {
 
     private ApiService apiService;
+    private RealmService realmService;
     private LoginContract.View view;
 
     @Inject
-    public LoginPresenter(ApiService apiService, LoginContract.View view) {
+    public LoginPresenter(ApiService apiService, RealmService realmService, LoginContract.View view) {
         this.apiService = apiService;
+        this.realmService = realmService;
         this.view = view;
     }
 

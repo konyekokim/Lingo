@@ -1,4 +1,4 @@
-package com.example.konye.lingo.api;
+package com.example.konye.lingo.data;
 
 import com.example.konye.lingo.models.CreateUser;
 import com.example.konye.lingo.models.AuthResponse;
