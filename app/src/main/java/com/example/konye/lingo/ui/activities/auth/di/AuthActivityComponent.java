@@ -6,7 +6,6 @@ import com.example.konye.lingo.di.component.AppComponent;
 import com.example.konye.lingo.di.qaulifier.ActivityContext;
 import com.example.konye.lingo.di.scope.ActivityScope;
 import com.example.konye.lingo.ui.activities.auth.AuthActivity;
-import com.example.konye.lingo.ui.activities.auth.LoginFragment;
 
 import dagger.Component;
 

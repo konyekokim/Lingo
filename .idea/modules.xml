@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Lingo.iml" filepath="$PROJECT_DIR$/.idea/Lingo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lingo.iml" filepath="$PROJECT_DIR$/Lingo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

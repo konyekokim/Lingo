@@ -27,6 +27,7 @@ public class Mahadum extends Application {
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         );
+
         component = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();

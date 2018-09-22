@@ -5,6 +5,7 @@ import android.util.Log;
 import com.example.konye.lingo.data.ApiService;
 import com.example.konye.lingo.data.RealmService;
 import com.example.konye.lingo.models.AuthResponse;
+import com.example.konye.lingo.models.CreateUser;
 import com.example.konye.lingo.models.LoginUser;
 
 import javax.inject.Inject;
@@ -75,5 +76,10 @@ public class AuthPresenter implements AuthContract.Presenter {
                         view.showComplete();
                     }
                 });
+    }
+
+    @Override
+    public void register(CreateUser user) {
+
     }
 }

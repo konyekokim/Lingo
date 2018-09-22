@@ -16,7 +16,6 @@ import com.example.konye.lingo.models.LoginUser
 import com.example.konye.lingo.ui.activities.LandingPageActivity
 import com.example.konye.lingo.ui.activities.auth.di.AuthActivityComponent
 import com.example.konye.lingo.ui.activities.auth.di.AuthActivityContextModule
-import com.example.konye.lingo.ui.activities.auth.di.AuthActivityMvpModule
 import com.example.konye.lingo.ui.activities.register.RegisterFragment
 import javax.inject.Inject
 
@@ -98,8 +97,8 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
         progressDialog = ProgressDialog(this)
         val component = Mahadum.get(this).appComponent
         authActivityComponent = DaggerAuthActivityComponent.builder()
-                .loginActivityContextModule(AuthActivityContextModule(this))
-                .loginActivityMvpModule(AuthActivityMvpModule(this))
+                .authActivityContextModule(AuthActivityContextModule(this))
+                .authActivityContextModule(AuthActivityContextModule(this))
                 .appComponent(component)
                 .build()
         authActivityComponent.inject(this)
