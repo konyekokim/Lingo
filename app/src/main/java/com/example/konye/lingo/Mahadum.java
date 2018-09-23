@@ -8,6 +8,7 @@ import com.example.konye.lingo.di.component.AppComponent;
 import com.example.konye.lingo.di.component.DaggerAppComponent;
 import com.example.konye.lingo.di.module.AppModule;
 
+import io.realm.Realm;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -31,7 +32,7 @@ public class Mahadum extends Application {
         component = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
                 .build();
-        component.inject(this);
+        Realm.init(this);
     }
 
     public AppComponent getAppComponent() {

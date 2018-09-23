@@ -3,10 +3,10 @@ package com.example.konye.lingo.di.module;
 import android.content.Context;
 
 import com.example.konye.lingo.data.ApiService;
-import com.example.konye.lingo.di.qaulifier.AppContext;
-import com.example.konye.lingo.di.scope.AppScope;
 
 import java.util.concurrent.TimeUnit;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -27,14 +27,13 @@ public class AppModule {
     }
 
     @Provides
-    @AppScope
-    @AppContext
+    @Singleton
     public Context providesContext() {
         return context;
     }
 
     @Provides
-    @AppScope
+    @Singleton
     Retrofit getRetrofit(OkHttpClient okHttpClient){
         return new Retrofit.Builder()
                 .baseUrl(ApiService.BASEURL)
@@ -45,7 +44,7 @@ public class AppModule {
     }
 
     @Provides
-    @AppScope
+    @Singleton
     OkHttpClient getOkHttpClient(HttpLoggingInterceptor httpLoggingInterceptor){
         return new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
@@ -60,7 +59,7 @@ public class AppModule {
     }
 
     @Provides
-    @AppScope
+    @Singleton
     HttpLoggingInterceptor getHttpLoggingInterceptor(){
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -68,7 +67,7 @@ public class AppModule {
     }
 
     @Provides
-    @AppScope
+    @Singleton
     public ApiService providesApiService(Retrofit retrofit){
         return retrofit.create(ApiService.class);
     }

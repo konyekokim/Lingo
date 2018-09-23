@@ -1,28 +1,20 @@
 package com.example.konye.lingo.di.component;
 
-
-import android.content.Context;
-
-import com.example.konye.lingo.Mahadum;
-import com.example.konye.lingo.data.ApiService;
-import com.example.konye.lingo.data.RealmService;
 import com.example.konye.lingo.di.module.AppModule;
 import com.example.konye.lingo.di.module.RealmModule;
 import com.example.konye.lingo.di.module.SchedulerProviderModule;
-import com.example.konye.lingo.di.qaulifier.AppContext;
-import com.example.konye.lingo.di.scope.AppScope;
+import com.example.konye.lingo.ui.activities.auth.di.AuthActivityComponent;
+import com.example.konye.lingo.ui.activities.auth.di.AuthActivityContextModule;
+
+import javax.inject.Singleton;
 
 import dagger.Component;
 
-@AppScope
+@Singleton
 @Component(modules = {AppModule.class, SchedulerProviderModule.class, RealmModule.class})
 public interface AppComponent {
+    /*
+    void inject(Mahadum application);*/
 
-    ApiService getApiService();
-    RealmService getRealmService();
-
-    @AppContext
-    Context getContext();
-
-    void inject(Mahadum application);
+    AuthActivityComponent add(AuthActivityContextModule module);
 }

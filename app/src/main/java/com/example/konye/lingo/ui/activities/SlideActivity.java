@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.konye.lingo.R;
-import com.example.konye.lingo.ui.activities.auth.AuthActivity;
+import com.example.konye.lingo.ui.activities.auth.AuthenticateActivity;
 import com.example.konye.lingo.utils.SlideManager;
 
 public class SlideActivity extends AppCompatActivity {
@@ -42,7 +42,7 @@ public class SlideActivity extends AppCompatActivity {
         //changeWidgetsFont();
         final SlideManager slideManager = new SlideManager(this);
         if(!slideManager.check()){
-            Intent intent = new Intent(getApplicationContext(),AuthActivity.class);
+            Intent intent = new Intent(getApplicationContext(),AuthenticateActivity.class);
             intent.putExtra("where", "login");
             startActivity(intent);
         }
@@ -88,13 +88,13 @@ public class SlideActivity extends AppCompatActivity {
             }
         });
         signInbutton.setOnClickListener(v -> {
-            Intent intent = new  Intent(getApplicationContext(),AuthActivity.class);
+            Intent intent = new  Intent(getApplicationContext(),AuthenticateActivity.class);
             intent.putExtra("where", "login");
             startActivity(intent);
             finish();
         });
         signUpbutton.setOnClickListener(v -> {
-            Intent intent = new  Intent(getApplicationContext(),AuthActivity.class);
+            Intent intent = new  Intent(getApplicationContext(),AuthenticateActivity.class);
             intent.putExtra("where", "register");
             startActivity(intent);
             finish();

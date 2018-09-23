@@ -30,7 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
+        <!--
+        <activity
             android:name=".ui.activities.auth.LoginFragment"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
@@ -39,7 +40,8 @@
             android:name=".ui.activities.register.RegisterFragment"
             android:label="@string/title_activity_register"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />-->
+            android:theme="@style/AppTheme.NoActionBar" />
+        -->
         <activity
             android:name=".ui.activities.SlideActivity"
             android:label="@string/title_activity_slide"
@@ -106,7 +108,12 @@
             android:label="@string/title_activity_video"
             android:parentActivityName=".ui.activities.StoreActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activities.auth.AuthActivity"
+        <!--<activity
+            android:name=".ui.activities.auth.AuthActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />-->
+        <activity android:name=".ui.activities.auth.AuthenticateActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>

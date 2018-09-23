@@ -2,9 +2,10 @@ package com.example.konye.lingo.ui.activities.auth.di;
 
 import android.content.Context;
 
-import com.example.konye.lingo.di.qaulifier.ActivityContext;
-import com.example.konye.lingo.di.scope.ActivityScope;
-import com.example.konye.lingo.ui.activities.auth.AuthActivity;
+import com.example.konye.lingo.data.ApiService;
+import com.example.konye.lingo.data.RealmService;
+import com.example.konye.lingo.ui.activities.auth.AuthContract;
+import com.example.konye.lingo.ui.activities.auth.AuthPresenter;
 
 import dagger.Module;
 import dagger.Provides;
@@ -12,24 +13,22 @@ import dagger.Provides;
 @Module
 public class AuthActivityContextModule {
 
-    private AuthActivity activity;
-    public Context context;
 
-    public AuthActivityContextModule(AuthActivity activity) {
-        this.activity = activity;
-        this.context = activity;
+    private AuthContract.View view;
+
+    public AuthActivityContextModule(AuthContract.View view) {
+        this.view = view;
     }
 
     @Provides
-    @ActivityScope
-    public AuthActivity providesAuthActivity() {
-        return activity;
+    @AuthScope
+    AuthContract.View providesView() {
+        return view;
     }
 
     @Provides
-    @ActivityScope
-    @ActivityContext
-    public Context provideContext() {
-        return context;
+    @AuthScope
+    AuthPresenter providesPresenter(ApiService apiService, RealmService realmService, AuthContract.View view) {
+        return new AuthPresenter(apiService, realmService, view);
     }
 }
