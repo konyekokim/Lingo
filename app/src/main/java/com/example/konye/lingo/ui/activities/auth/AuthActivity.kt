@@ -74,13 +74,13 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
         showRegister()
     }
 
-    @Inject
+    /*@Inject
     @AppContext
     lateinit var mContext: Context
 
     @Inject
     @ActivityContext
-    lateinit var activityContext: Context
+    lateinit var activityContext: Context*/
 
     @Inject
     internal lateinit var presenter: AuthPresenter
@@ -103,6 +103,13 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
                 .appComponent(component)
                 .build()
         authActivityComponent.inject(this)
+
+        if (savedInstanceState != null) {
+            if (savedInstanceState["where"] == "login")
+                showLogin()
+            else if (savedInstanceState["where"] == "register")
+                showRegister()
+        }
     }
 
     override fun onBackPressed() {
