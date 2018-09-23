@@ -76,18 +76,4 @@ public class ChooseLanguageActivity extends AppCompatActivity {
             finish();
         });
     }
-
-    /*private void changeWidgetsFont(){
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("helvetica_font_normal.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }*/
-
 }

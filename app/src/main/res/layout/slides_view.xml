@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
@@ -9,12 +10,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1">
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/slides_list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="35dp"
             android:layout_marginStart="35dp"
+            tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/slides_view_row"
             android:scrollbarStyle="outsideInset"
             android:smoothScrollbar="true" />
 

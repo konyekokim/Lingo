@@ -1,22 +1,22 @@
 package com.example.konye.lingo.ui.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListView;
 
 import com.example.konye.lingo.R;
 import com.example.konye.lingo.utils.VideosClass;
 import com.example.konye.lingo.adapters.VideosAdapter;
 import com.example.konye.lingo.ui.activities.LanguageActivity;
-import com.example.konye.lingo.ui.activities.QuizViewActivity;
 import com.example.konye.lingo.ui.activities.VideoViewActivity;
 
 import java.util.ArrayList;
@@ -27,10 +27,15 @@ import java.util.ArrayList;
 public class VideoFragment extends Fragment {
 
     ArrayList<VideosClass> videosClasses;
+    private OnFragmentInteractionListener listener;
     public static final String LANGUAGE_SELECTED = "com.example.konye.lingo videoLangSelected";
     Intent intent;
     public VideoFragment() {
         // Required empty public constructor
+    }
+
+    public static VideoFragment newInstance() {
+        return new VideoFragment();
     }
 
 
@@ -38,35 +43,36 @@ public class VideoFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View videoView = inflater.inflate(R.layout.videos_view, container, false);
-        ListView videoListView = videoView.findViewById(R.id.videos_list_view);
+        RecyclerView videoListView = videoView.findViewById(R.id.videos_list_view);
         ImageView continueButton = videoView.findViewById(R.id.continue_btn);
         continueButton.setOnClickListener(v -> {
             intent = new Intent(getContext(),VideoViewActivity.class);
-            //languageSelector(languageSelected);
-            //intent.putExtra(LanguageActivity.LANGUAGE_SELECTED, languageSelected);
             intent.putExtra(LanguageActivity.LANGUAGE_VIDEO_INDEX, 3);
             startActivity(intent);
         });
         addVideosListData();
-        VideosAdapter videosAdapter = new VideosAdapter(getContext(),R.layout.videos_view_row,videosClasses);
+        VideosAdapter videosAdapter = new VideosAdapter(listener, videosClasses);
+        videoListView.setLayoutManager(new LinearLayoutManager(getContext()));
+        videoListView.setHasFixedSize(true);
         videoListView.setAdapter(videosAdapter);
-        videoListView.setOnItemClickListener((parent, view, position, id) -> {
-            //this is just a test intent, put another intent when you are ready
-            if(position == videosClasses.size()-1){
-                Intent intent = new Intent(getContext(),QuizViewActivity.class);
-                startActivity(intent);
-            }else{
-                intent = new Intent(getContext(),VideoViewActivity.class);
-                //languageSelector(languageSelected);
-                //intent.putExtra(LanguageActivity.LANGUAGE_SELECTED, languageSelected);
-                intent.putExtra(LanguageActivity.LANGUAGE_VIDEO_INDEX, position);
-                startActivity(intent);
-            }
-
-        });
         return videoView;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener)
+            listener = (OnFragmentInteractionListener) context;
+        else
+            throw new RuntimeException(context.getClass().getSimpleName() + " must implement " +
+                    "OnFragmentInteractionListener");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
+    }
 
     private void addVideosListData(){
         videosClasses = new ArrayList<>();
@@ -106,6 +112,11 @@ public class VideoFragment extends Fragment {
                 R.drawable.vid_1));
         videosClasses.add(new VideosClass("Part 2","Quiz",
                 R.drawable.vid_3));
+    }
+
+
+    public interface OnFragmentInteractionListener {
+        void onVideoSelected(int pos, ArrayList<VideosClass> videos);
     }
 
 }

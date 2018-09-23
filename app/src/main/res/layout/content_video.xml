@@ -133,7 +133,7 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="8dp" />
 
-    <GridView
+    <!--<GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -141,6 +141,14 @@
         android:layout_marginStart="5dp"
         android:columnWidth="120dp"
         android:numColumns="auto_fit"
-        android:stretchMode="columnWidth" />
+        android:stretchMode="columnWidth" />-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:listitem="@layout/grid_video_item"/>
 
 </LinearLayout>

@@ -15,24 +15,25 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
-import android.view.View;
 import android.widget.TextView;
 
 import com.example.konye.lingo.R;
 import com.example.konye.lingo.adapters.BooksVideosPagerAdapter;
+import com.example.konye.lingo.ui.fragments.BooksFragment;
+import com.example.konye.lingo.ui.fragments.VideosFragment;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class StoreActivity extends AppCompatActivity {
+public class StoreActivity extends AppCompatActivity implements
+        BooksFragment.OnFragmentInteractionListener,
+        VideosFragment.OnFragmentInteractionListener {
 
     public static final String BOOK_FIRST_IMG_VIEW = "com.example.konye.lingo bookFirstImgView";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
         checkNetworkConnection();
-        //changeWidgetsFont();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -43,13 +44,14 @@ public class StoreActivity extends AppCompatActivity {
         viewActions();
     }
 
-    private void viewActions(){
+    private void viewActions() {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Books"));
         tabLayout.addTab(tabLayout.newTab().setText("Videos"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         final ViewPager viewPager = findViewById(R.id.books_videos_pager);
-        final PagerAdapter pagerAdapter = new BooksVideosPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        final PagerAdapter pagerAdapter = new BooksVideosPagerAdapter(getSupportFragmentManager(),
+                tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -70,14 +72,14 @@ public class StoreActivity extends AppCompatActivity {
         });
     }
 
-    private void checkNetworkConnection(){
+    private void checkNetworkConnection() {
         CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
-        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
             //we are connected to a network
-            Snackbar.make(coordinatorLayout,"Connection successful", Snackbar.LENGTH_SHORT).show();
-        } else{
+            Snackbar.make(coordinatorLayout, "Connection successful", Snackbar.LENGTH_SHORT).show();
+        } else {
             //we are not connected to a network
             Snackbar.make(coordinatorLayout, "Oops! No internet connection", Snackbar.LENGTH_INDEFINITE)
                     .setAction("RETRY", view -> {
@@ -91,7 +93,7 @@ public class StoreActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK){
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             finish();
         }
         return super.onKeyDown(keyCode, event);
@@ -102,18 +104,15 @@ public class StoreActivity extends AppCompatActivity {
         finish();
     }
 
-    /*private void changeWidgetsFont(){
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
+    @Override
+    public void onBookClicked() {
+        Intent intent = new Intent(this, BookActivity.class);
+        startActivity(intent);
     }
 
     @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }*/
-
-
+    public void onVideoClicked() {
+        Intent intent = new Intent(this, VideoActivity.class);
+        startActivity(intent);
+    }
 }

@@ -126,9 +126,6 @@ public class VideoViewActivity extends AppCompatActivity implements YouTubeThumb
     @Override
     public void onInitializationSuccess(YouTubeThumbnailView thumbnailView,
                                         YouTubeThumbnailLoader thumbnailLoader) {
-
-       // Toast.makeText(getApplicationContext(),
-         //       "onInitializationSuccess", Toast.LENGTH_SHORT).show();
         YouTubeThumbnailLoader youTubeThumbnailLoader = thumbnailLoader;
         thumbnailLoader.setOnThumbnailLoadedListener(new ThumbnailListener());
 
@@ -142,29 +139,12 @@ public class VideoViewActivity extends AppCompatActivity implements YouTubeThumb
         @Override
         public void onThumbnailLoaded(YouTubeThumbnailView thumbnail, String videoId) {
             progressDialog.dismiss();
-            //Toast.makeText(getApplicationContext(),
-             //       "onThumbnailLoaded", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onThumbnailError(YouTubeThumbnailView thumbnail,
                                      YouTubeThumbnailLoader.ErrorReason reason) {
-            //Toast.makeText(getApplicationContext(),
-                  //  "onThumbnailError", Toast.LENGTH_SHORT).show();
         }
     }
-
-    /*private void changeWidgetsFont(){
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }*/
 
 }

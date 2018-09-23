@@ -1,24 +1,21 @@
 package com.example.konye.lingo.ui.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.konye.lingo.R;
 import com.example.konye.lingo.adapters.VideosGridAdapter;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-
-public class VideoActivity extends AppCompatActivity {
+public class VideoActivity extends AppCompatActivity implements VideosGridAdapter.InteractionListener{
     int imageRes[] = {R.drawable.book2,R.drawable.book1,R.drawable.book3,R.drawable.book1,R.drawable.book1,
             R.drawable.book1,R.drawable.book1,R.drawable.book3,R.drawable.book2,R.drawable.book2};
     String names[] = {"Name of books in here", "Name of books in here","Name of books in here","Name of books in here",
@@ -45,9 +42,8 @@ public class VideoActivity extends AppCompatActivity {
         Button previewButton = findViewById(R.id.preview_button);
         Button purchaseButton = findViewById(R.id.purchase_button);
         TextView detailsTextView = findViewById(R.id.details_textView);
-        GridView gridView = findViewById(R.id.gridView);
-        VideosGridAdapter gridAdapter = new VideosGridAdapter(this, imageRes,names);
-        gridView.setAdapter(gridAdapter);
+        RecyclerView grid = findViewById(R.id.list);
+        setRecycler(grid);
         bookImgView.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), PdfReaderActivity.class);
             startActivity(intent);
@@ -58,17 +54,16 @@ public class VideoActivity extends AppCompatActivity {
         });
     }
 
-    /*private void changeWidgetsFont(){
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("helvetica_font_normal.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
+    private void setRecycler(RecyclerView view) {
+        view.setLayoutManager(new GridLayoutManager(this, 3,
+                LinearLayoutManager.VERTICAL, false));
+        view.setHasFixedSize(true);
+        VideosGridAdapter adapter = new VideosGridAdapter(this, imageRes, names);
+        view.setAdapter(adapter);
     }
 
     @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }*/
+    public void onVideoClicked() {
 
+    }
 }

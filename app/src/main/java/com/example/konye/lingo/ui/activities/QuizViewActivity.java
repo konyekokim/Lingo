@@ -89,30 +89,4 @@ public class QuizViewActivity extends AppCompatActivity {
 
         }
     };
-
-    /*private void changeWidgetsFont(){
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }*/
-
-   /* private ArrayList<QuizType2> quizType2s(){
-        quizType2list = new ArrayList<>();
-        quizType2list.add(new QuizType2(R.drawable.nigeria,"why shall man not live by bread alone?","to eat",
-                "to die","to live longer", "to buy tooth paste"));
-        quizType2list.add(new QuizType2(R.drawable.nigeria,"why shall man not live by bread alone?","to eat",
-                "to die","to live longer", "to tooth paste"));
-        quizType2list.add(new QuizType2(R.drawable.nigeria,"why shall girls not live by bread alone?","to eat",
-                "to die","to no longer", "to buy tooth paste"));
-        quizType2list.add(new QuizType2(R.drawable.nigeria,"why shall boys not live by bread alone?","to eat",
-                "to fly","to live longer", "to buy tooth paste"));
-        return quizType2list;
-    }*/
 }

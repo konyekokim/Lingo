@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Mahadum</string>
+    <string name="app_name" translatable="false">Mahadum</string>
 
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_button" translatable="false">Dummy Button</string>
+    <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
     <string name="title_activity_language_list">LanguageListActivity</string>
     <string name="title_activity_choose_path">ChoosePath</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login" translatable="false">AuthActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_slide">SlideActivity</string>
@@ -31,11 +31,11 @@
     <string name="title_activity_video_view">VideoViewActivity</string>
     <string name="title_activity_video_play">VideoPlayActivity</string>
     <string name="title_activity_language_home">LanguageHomeActivity</string>
-    <string name="title_activity_first">FirstActivity</string>
+    <string name="title_activity_first">SplashActivity</string>
     <string name="title_activity_video_views">VideoViewsActivity</string>
     <string name="title_activity_choose_language">ChooseLanguageActivity</string>
     <string name="title_activity_store">StoreActivity</string>
     <string name="title_activity_book">BookActivity</string>
-    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_main2">MainActivity</string>
     <string name="title_activity_video">VideoActivity</string>
 </resources>

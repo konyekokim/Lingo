@@ -1,20 +1,21 @@
 package com.example.konye.lingo.ui.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListView;
 
 import com.example.konye.lingo.R;
 import com.example.konye.lingo.utils.SlidesClass;
 import com.example.konye.lingo.adapters.SlidesAdapter;
-import com.example.konye.lingo.ui.activities.QuizViewActivity;
 import com.example.konye.lingo.ui.activities.SlideViewActivity;
 
 import java.util.ArrayList;
@@ -24,37 +25,46 @@ import java.util.ArrayList;
  */
 public class SlideFragment extends Fragment {
 
-    int pos = 2;
     View slideView;
+    private OnFragmentInteractionListener listener;
     ArrayList<SlidesClass>  slidesClasses;
     public SlideFragment() {
         // Required empty public constructor
     }
 
-
+    @NonNull
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         slideView =  inflater.inflate(R.layout.slides_view,container,false);
-        ListView slideListView = slideView.findViewById(R.id.slides_list_view);
+        RecyclerView slideListView = slideView.findViewById(R.id.slides_list_view);
         ImageView continueButton = slideView.findViewById(R.id.continue_btn);
         continueButton.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), SlideViewActivity.class);
             startActivity(intent);
         });
         addSlidesListData();
-        SlidesAdapter slidesAdapter = new SlidesAdapter(getContext(),R.layout.slides_view_row,addSlidesListData());
+        SlidesAdapter slidesAdapter = new SlidesAdapter(listener, addSlidesListData());
+        slideListView.setLayoutManager(new LinearLayoutManager(getContext()));
+        slideListView.setHasFixedSize(true);
         slideListView.setAdapter(slidesAdapter);
-        slideListView.setOnItemClickListener((parent, view, position, id) -> {
-            if(position == slidesClasses.size()-1){
-                Intent intent = new Intent(getContext(),QuizViewActivity.class);
-                startActivity(intent);
-            }else {
-                Intent intent = new Intent(getContext(), SlideViewActivity.class);
-                startActivity(intent);
-            }
-        });
         return slideView;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener)
+            listener = (OnFragmentInteractionListener) context;
+        else
+            throw new RuntimeException(context.getClass().getSimpleName() + " must implement " +
+                    "OnFragmentInteractionListener");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 
     private ArrayList<SlidesClass> addSlidesListData(){
@@ -72,5 +82,9 @@ public class SlideFragment extends Fragment {
         slidesClasses.add(new SlidesClass("Part 5","Quiz",R.drawable.green_p));
 
         return slidesClasses;
+    }
+
+    public interface OnFragmentInteractionListener {
+        void onSlideClicked(int pos, ArrayList<SlidesClass> slides);
     }
 }

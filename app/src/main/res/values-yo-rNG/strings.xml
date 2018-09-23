@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open">Ṣii</string>
+    <string name="close">Pa</string>
+    <string name="hello_blank_fragment">Kaabo òfo ajeku</string>
+    <string name="title_activity_language">EdeAṣayan</string>
+    <string name="title_activity_slide_view">"WiwoAwọnIṣẹAṣayan "</string>
+    <string name="title_activity_quiz_view">QuizViewAṣayan</string>
+    <string name="title_activity_video_view">FidioAṣayan</string>
+    <string name="title_activity_video_play">WiwoAworanAṣayan</string>
+    <string name="title_activity_language_home">EdeIleAṣayan</string>
+    <string name="title_activity_first">GbigbọnAṣayan</string>
+    <string name="title_activity_choose_language">YanEdeAṣayan</string>
+    <string name="title_activity_store">ṢiṣeIṣẹAṣayan</string>
+    <string name="title_activity_book">IweAṣayan</string>
+    <string name="title_activity_main2">IfilelẹAṣayan</string>
+    <string name="title_activity_video">FidioAṣayan</string>
+    <string name="title_activity_video_views">Aṣayan</string>
+    <string name="title_activity_welcome">KaaboAṣayan</string>
+    <string name="title_activity_slide">IfaworanhanAṣayan</string>
+    <string name="title_activity_register">ForukọsilẹAṣayan</string>
+    <string name="title_activity_choose_path">YanOna</string>
+    <string name="title_activity_language_list">Aṣayan</string>
+    <string name="title_activity_select_language">YanEde</string>
+    <string name="title_activity_select_language2">YanEde2</string>
+</resources>

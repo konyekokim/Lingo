@@ -1,6 +1,5 @@
 package com.example.konye.lingo.ui.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -13,11 +12,17 @@ import android.widget.TextView;
 import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.example.konye.lingo.R;
 import com.example.konye.lingo.adapters.SlideVideoPagerAdapter;
+import com.example.konye.lingo.ui.fragments.SlideFragment;
+import com.example.konye.lingo.ui.fragments.VideoFragment;
+import com.example.konye.lingo.ui.fragments.VideosFragment;
+import com.example.konye.lingo.utils.SlidesClass;
+import com.example.konye.lingo.utils.VideosClass;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import java.util.ArrayList;
 
-public class LanguageActivity extends AppCompatActivity {
+
+public class LanguageActivity extends AppCompatActivity implements
+        SlideFragment.OnFragmentInteractionListener, VideoFragment.OnFragmentInteractionListener{
 
     String nameOfLanguage;
     public static final String LANGUAGES_SELECTED = "com.example.konye.lingo language_selected";
@@ -70,17 +75,27 @@ public class LanguageActivity extends AppCompatActivity {
         });
     }
 
-    /*private void changeWidgetsFont(){
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
+    @Override
+    public void onSlideClicked(int pos, ArrayList<SlidesClass> slides) {
+        if(pos == slides.size()-1){
+            Intent intent = new Intent(this,QuizViewActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(this, SlideViewActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }*/
-
+    public void onVideoSelected(int pos, ArrayList<VideosClass> videos) {
+        //this is just a test intent, put another intent when you are ready
+        if(pos == videos.size()-1){
+            Intent intent = new Intent(this,QuizViewActivity.class);
+            startActivity(intent);
+        }else{
+            intent = new Intent(this,VideoViewActivity.class);
+            intent.putExtra(LanguageActivity.LANGUAGE_VIDEO_INDEX, pos);
+            startActivity(intent);
+        }
+    }
 }

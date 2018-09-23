@@ -11,7 +11,7 @@ import com.example.konye.lingo.R
 import com.example.konye.lingo.models.CreateUser
 import com.example.konye.lingo.models.LoginUser
 import com.example.konye.lingo.ui.activities.LandingPageActivity
-import com.example.konye.lingo.ui.activities.register.RegisterFragment
+import com.example.konye.lingo.ui.activities.auth.di.AuthActivityContextModule
 import javax.inject.Inject
 
 class AuthActivity : AppCompatActivity(), AuthContract.View,
@@ -81,19 +81,18 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
         progressDialog = ProgressDialog(this)
-        /*authActivityComponent = DaggerAuthActivityComponent.builder()
-                .authActivityContextModule(AuthActivityContextModule(this))*//*
-                .authActivityMvpModule(AuthActivityMvpModule(this))*//*
-                .appComponent(component)
-                .build()
-        authActivityComponent.inject(this)*/
+        (application as Mahadum)
+                .appComponent
+                .add(AuthActivityContextModule(this))
+                .inject(this)
 
-        if (savedInstanceState != null) {
-            if (savedInstanceState["where"] == "login")
+        if (intent != null && intent.extras != null && intent.hasExtra("where")) {
+            if (intent.extras.getString("where") == "login")
                 showLogin()
-            else if (savedInstanceState["where"] == "register")
+            else
                 showRegister()
-        }
+        } else
+            showLogin()
     }
 
     override fun onBackPressed() {

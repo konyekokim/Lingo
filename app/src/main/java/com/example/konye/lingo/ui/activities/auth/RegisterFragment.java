@@ -1,4 +1,4 @@
-package com.example.konye.lingo.ui.activities.register;
+package com.example.konye.lingo.ui.activities.auth;
 
 import android.content.Context;
 import android.os.Bundle;

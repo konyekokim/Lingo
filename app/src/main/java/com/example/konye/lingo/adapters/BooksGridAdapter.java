@@ -1,76 +1,65 @@
 package com.example.konye.lingo.adapters;
 
-import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.konye.lingo.R;
+import com.example.konye.lingo.ui.fragments.BooksFragment.OnFragmentInteractionListener;
 
-import java.util.ArrayList;
 
 /**
- * Created by ALPHA AND JAM on 12/7/2017.
+ * Created by Abdul on 23/09/2018.
  */
 
-public class BooksGridAdapter extends BaseAdapter{
+public class BooksGridAdapter extends RecyclerView.Adapter<BooksGridAdapter.ViewHolder>{
     private int imageRes[];
     private String names[];
-    private Context context;
-    private LayoutInflater layoutInflater;
-    public BooksGridAdapter(Context context, int imageRes[], String names[]){
-        this.context = context;
+    private OnFragmentInteractionListener listener;
+    public BooksGridAdapter(OnFragmentInteractionListener listener, int imageRes[], String names[]){
+        this.listener = listener;
         this.imageRes = imageRes;
         this.names = names;
     }
+
+
+    @NonNull
     @Override
-    public int getCount() {
-        return names.length;
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.grid_book_item, parent, false);
+        return new ViewHolder(v);
     }
 
     @Override
-    public Object getItem(int i) {
-        return names[i];
+    public void onBindViewHolder(@NonNull ViewHolder holder, int pos) {
+        holder.bookImage.setImageResource(imageRes[pos]);
+        holder.bookText.setText(names[pos]);
+
+        holder.v.setOnClickListener(t -> {
+            if (listener != null)
+                listener.onBookClicked();
+        });
     }
 
     @Override
-    public long getItemId(int i) {
-        return i;
+    public int getItemCount() {
+        return imageRes.length;
     }
 
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        View gridView = view;
-        if(view == null){
-            layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            gridView = layoutInflater.inflate(R.layout.grid_book_item,null);
+    class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView bookImage;
+        TextView bookText;
+        View v;
+        ViewHolder(View v) {
+            super(v);
+            bookImage = v.findViewById(R.id.books_imgView);
+            bookText = v.findViewById(R.id.books_textView);
+            this.v = v;
         }
-        ImageView bookImage = gridView.findViewById(R.id.books_imgView);
-        TextView nameTextView = gridView.findViewById(R.id.books_textView);
-        bookImage.setImageResource(imageRes[i]);
-        nameTextView.setText(names[i]);
-        return gridView;
     }
-
-    /*ArrayList<GridClass> gridClasses;
-    public BooksGridAdapter(Context context, int resources, ArrayList<GridClass> gridClasses){
-        super(context,resources,gridClasses);
-        this.gridClasses = gridClasses;
-    }
-
-    public View getView(int position, View convertView, ViewGroup container){
-        if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.grid_book_item,null);
-        }
-        GridClass gridClass = getItem(position);
-        ImageView bookImage = (ImageView) convertView.findViewById(R.id.books_imgView);
-        TextView nameTextView = (TextView) convertView.findViewById(R.id.books_textView);
-        bookImage.setImageURI(gridClass.getPicUri());
-        nameTextView.setText(gridClass.getName());
-        return convertView;
-    }*/
 }

@@ -15,7 +15,7 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setFullScreen();
         setContentView(R.layout.activity_first);
-        int WELCOME_TIMEOUT = 4000;
+        int WELCOME_TIMEOUT = 3000;
         new Handler().postDelayed(() -> {
             Intent intent = new Intent(getApplicationContext(), SlideActivity.class);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
