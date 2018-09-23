@@ -16,6 +16,7 @@ import com.example.konye.lingo.models.LoginUser
 import com.example.konye.lingo.ui.activities.LandingPageActivity
 import com.example.konye.lingo.ui.activities.auth.di.AuthActivityComponent
 import com.example.konye.lingo.ui.activities.auth.di.AuthActivityContextModule
+import com.example.konye.lingo.ui.activities.auth.di.DaggerAuthActivityComponent
 import com.example.konye.lingo.ui.activities.register.RegisterFragment
 import javax.inject.Inject
 
