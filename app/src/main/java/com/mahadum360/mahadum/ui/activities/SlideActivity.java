@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mahadum360.mahadum.R;
-import com.mahadum360.mahadum.ui.activities.auth.AuthActivity;
+import com.mahadum360.mahadum.auth.AuthActivity;
 import com.mahadum360.mahadum.utils.SlideManager;
 
 public class SlideActivity extends AppCompatActivity {
@@ -45,6 +45,7 @@ public class SlideActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(),AuthActivity.class);
             intent.putExtra("where", "login");
             startActivity(intent);
+            finish();
         }
         if(Build.VERSION.SDK_INT>=21){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE|View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
@@ -198,19 +199,6 @@ public class SlideActivity extends AppCompatActivity {
             container.removeView(v);
         }
     }
-
-    /*private void changeWidgetsFont(){
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Montserrat-Regular.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build()
-        );
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }*/
 
     private void setFullScreen(){
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,

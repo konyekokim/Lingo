@@ -1,9 +1,9 @@
-package com.mahadum360.mahadum.ui.activities.auth.di;
+package com.mahadum360.mahadum.auth.di;
 
 import com.mahadum360.mahadum.data.ApiService;
 import com.mahadum360.mahadum.data.RealmService;
-import com.mahadum360.mahadum.ui.activities.auth.AuthContract;
-import com.mahadum360.mahadum.ui.activities.auth.AuthPresenter;
+import com.mahadum360.mahadum.auth.AuthContract;
+import com.mahadum360.mahadum.auth.AuthPresenter;
 
 import dagger.Module;
 import dagger.Provides;

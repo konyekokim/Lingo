@@ -48,7 +48,7 @@ public class VideoViewActivity extends AppCompatActivity implements YouTubeThumb
         TextView actionBarTextView = findViewById(R.id.my_text);
         actionBarTextView.setText(String.valueOf("Video"));
         Intent intent = getIntent();
-        languageVideoIndex = intent.getIntExtra(LanguageActivity.LANGUAGE_VIDEO_INDEX, 0);
+        languageVideoIndex = intent.getIntExtra(/*LanguageActivity.LANGUAGE_VIDEO_INDEX*/"new", 0);
         youtubeVideoIDs = new YoutubeVideoIDs();
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");

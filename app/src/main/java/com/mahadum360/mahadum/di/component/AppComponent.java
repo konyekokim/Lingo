@@ -3,8 +3,8 @@ package com.mahadum360.mahadum.di.component;
 import com.mahadum360.mahadum.di.module.AppModule;
 import com.mahadum360.mahadum.di.module.RealmModule;
 import com.mahadum360.mahadum.di.module.SchedulerProviderModule;
-import com.mahadum360.mahadum.ui.activities.auth.di.AuthActivityComponent;
-import com.mahadum360.mahadum.ui.activities.auth.di.AuthActivityContextModule;
+import com.mahadum360.mahadum.auth.di.AuthActivityComponent;
+import com.mahadum360.mahadum.auth.di.AuthActivityContextModule;
 
 import javax.inject.Singleton;
 

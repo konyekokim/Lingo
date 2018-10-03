@@ -1,6 +1,5 @@
 package com.mahadum360.mahadum.ui.activities;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -18,11 +17,11 @@ public class LandingPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
 
         //changeWidgetsFont();
-        bookStoreButton = findViewById(R.id.book_store_button);
+        /*bookStoreButton = findViewById(R.id.book_store_button);
         bookStoreButton.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), StoreActivity.class);
             startActivity(intent);
-        });
+        });*/
     }
 
     private void setFullScreen(){

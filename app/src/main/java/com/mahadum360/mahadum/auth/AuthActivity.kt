@@ -1,4 +1,4 @@
-package com.mahadum360.mahadum.ui.activities.auth
+package com.mahadum360.mahadum.auth
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -11,7 +11,7 @@ import com.mahadum360.mahadum.R
 import com.mahadum360.mahadum.models.CreateUser
 import com.mahadum360.mahadum.models.LoginUser
 import com.mahadum360.mahadum.ui.activities.LandingPageActivity
-import com.mahadum360.mahadum.ui.activities.auth.di.AuthActivityContextModule
+import com.mahadum360.mahadum.auth.di.AuthActivityContextModule
 import javax.inject.Inject
 
 class AuthActivity : AppCompatActivity(), AuthContract.View,
@@ -73,8 +73,8 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
 
     val ROOT_TAG = AuthActivity::class.java.simpleName
     private var progressDialog: ProgressDialog? = null
-    private lateinit var loginFragment: LoginFragment
-    private lateinit var registerFragment: RegisterFragment
+    private var loginFragment: LoginFragment? = null
+    private var registerFragment: RegisterFragment? = null
     private lateinit var fragment: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,9 +96,10 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
     }
 
     override fun onBackPressed() {
-        if (fragment == LoginFragment())
+        if (loginFragment != null && loginFragment!!.isAdded) {
             super.onBackPressed()
-        else
+            finish()
+        } else
             showLogin()
     }
 
@@ -110,12 +111,16 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
     }
 
     private fun showLogin() {
-        loginFragment = LoginFragment.newInstance()
-        loadFragment(loginFragment)
+        if (loginFragment == null) {
+            loginFragment = LoginFragment.newInstance()
+        }
+        loadFragment(loginFragment!!)
     }
 
     private fun showRegister() {
-        registerFragment = RegisterFragment.newInstance()
-        loadFragment(registerFragment)
+        if (registerFragment == null) {
+            registerFragment = RegisterFragment.newInstance()
+        }
+        loadFragment(registerFragment!!)
     }
 }

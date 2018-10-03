@@ -1,4 +1,4 @@
-package com.mahadum360.mahadum.ui.activities.auth.di;
+package com.mahadum360.mahadum.auth.di;
 
 import javax.inject.Scope;
 

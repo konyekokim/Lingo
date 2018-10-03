@@ -1,8 +1,13 @@
-package com.mahadum360.mahadum.ui.activities;
+package com.mahadum360.mahadum.ui.fragments;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 
 import com.github.barteksc.pdfviewer.PDFView;
@@ -14,21 +19,29 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class PdfReaderActivity extends AppCompatActivity {
+public class PdfReaderFragment extends Fragment {
     PDFView pdfView;
     String pdf_url;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdf_reader);
-        //changeWidgetsFont();
-        pdfView = findViewById(R.id.pdfView);
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_pdf_reader, container, false);
+
+        pdfView = v.findViewById(R.id.pdfView);
+
         //this is for populating the viewer from assets
         //pdfView.fromAsset("result.PDF").load();
 
         //this reads pdf from URL
         //new RetrievePDFStream().execute(pdf_url);
+
+        return v;
     }
 
     class RetrievePDFStream extends AsyncTask<String,Void,InputStream> {

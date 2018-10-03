@@ -29,6 +29,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activities.SlideActivity"
@@ -36,27 +41,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activities.LanguageActivity"
-            android:label="@string/title_activity_language"
-            android:parentActivityName=".ui.activities.LanguageHomeActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ui.activities.SlideViewActivity"
             android:label="@string/title_activity_slide_view"
-            android:parentActivityName=".ui.activities.LanguageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activities.QuizViewActivity"
             android:label="@string/title_activity_quiz_view"
-            android:parentActivityName=".ui.activities.LanguageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activities.VideoViewActivity"
             android:label="@string/title_activity_video_view"
-            android:parentActivityName=".ui.activities.LanguageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -66,38 +62,12 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activities.LanguageHomeActivity"
-            android:label="@string/title_activity_language_home"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.activities.ChooseLanguageActivity"
-            android:label="@string/title_activity_choose_language"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.activities.StoreActivity"
-            android:label="@string/title_activity_store"
-            android:parentActivityName=".ui.activities.ChooseLanguageActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.activities.BookActivity"
-            android:label="@string/title_activity_book"
-            android:parentActivityName=".ui.activities.StoreActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.activities.PdfReaderActivity"
-            android:parentActivityName=".ui.activities.BookActivity" />
+            android:name=".ui.fragments.PdfReaderFragment" />
         <activity
             android:name=".ui.activities.LandingPageActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activities.VideoActivity"
-            android:label="@string/title_activity_video"
-            android:parentActivityName=".ui.activities.StoreActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.activities.auth.AuthActivity"
+            android:name="com.mahadum360.mahadum.auth.AuthActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />

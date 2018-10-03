@@ -1,4 +1,4 @@
-package com.mahadum360.mahadum.ui.activities.auth;
+package com.mahadum360.mahadum.auth;
 
 import android.content.Context;
 import android.os.Bundle;

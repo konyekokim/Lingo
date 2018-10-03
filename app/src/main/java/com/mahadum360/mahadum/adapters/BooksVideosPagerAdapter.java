@@ -4,9 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.mahadum360.mahadum.ui.fragments.BooksFragment;
-import com.mahadum360.mahadum.ui.fragments.VideosFragment;
-
 
 /**
  * Created by KONYE on 5/18/2017.
@@ -20,12 +17,8 @@ public class BooksVideosPagerAdapter extends FragmentPagerAdapter{
     }
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            case 0:
-                return new BooksFragment();
-            case 1:
-                return new VideosFragment();
-        }
+
+
         return null;
     }
 

@@ -1,6 +1,6 @@
-package com.mahadum360.mahadum.ui.activities.auth.di;
+package com.mahadum360.mahadum.auth.di;
 
-import com.mahadum360.mahadum.ui.activities.auth.AuthActivity;
+import com.mahadum360.mahadum.auth.AuthActivity;
 
 import dagger.Subcomponent;
 

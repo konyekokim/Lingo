@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mahadum360.mahadum.R;
-import com.mahadum360.mahadum.ui.activities.auth.LoginFragment;
+import com.mahadum360.mahadum.auth.LoginFragment;
 import com.mahadum360.mahadum.utils.SlidesClass;
 
 import java.util.ArrayList;
