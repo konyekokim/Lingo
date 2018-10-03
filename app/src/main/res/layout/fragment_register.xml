@@ -5,7 +5,7 @@
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.konye.lingo.ui.activities.auth.RegisterFragment">
+    tools:context=".auth.RegisterFragment">
 
     <include
         layout="@layout/content_register" />
