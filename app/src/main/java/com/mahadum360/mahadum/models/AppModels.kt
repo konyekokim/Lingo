@@ -6,24 +6,21 @@ import com.google.gson.annotations.SerializedName
 data class AuthResponse(@SerializedName("status")
                               @Expose
                               val status: String,
-                        @SerializedName("MAHADUM-TOKEN")
-                              @Expose
-                              var auth_token: String? = "",
                         @SerializedName("email")
                               @Expose
-                              var email: String? = "",
+                              var email: String = "",
                         @SerializedName("first_name")
                               @Expose
-                              var firstName: String? = "",
+                              var firstName: String = "",
                         @SerializedName("surname")
                               @Expose
-                              var surname: String? = "",
+                              var surname: String = "",
                         @SerializedName("phone_number")
                               @Expose
-                              var phoneNumber: String? = "",
+                              var phoneNumber: String = "",
                         @SerializedName("type")
                               @Expose
-                              var type: String? = "")
+                              var type: String = "")
 
 data class ChangePassword(val password: String,
                           val new_password: String)
@@ -46,12 +43,13 @@ data class UpdateUser(val first_name: String,
                       val surname: String,
                       val phone_number: String)
 
-data class User(val status: String,
-                val first_name: String,
-                val surname: String,
-                val email: String,
-                val phone_number: String,
-                val type: String,
+data class User(var status: String = "",
+                var first_name: String = "",
+                var authToken: String = "",
+                var surname: String = "",
+                var email: String = "",
+                var phone_number: String = "",
+                var type: String = "",
                 var number_of_kids: String? = "",
                 var school: String? = "",
                 var courses_assigned: String? = "",

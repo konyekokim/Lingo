@@ -3,6 +3,7 @@ package com.mahadum360.mahadum.auth;
 
 import com.mahadum360.mahadum.models.CreateUser;
 import com.mahadum360.mahadum.models.LoginUser;
+import com.mahadum360.mahadum.models.User;
 
 public interface AuthContract {
 
@@ -17,6 +18,8 @@ public interface AuthContract {
 
         void onLoginSuccess();
 
+        void onRegistrationSuccess(User user);
+
         void onLogout();
     }
 
@@ -26,5 +29,7 @@ public interface AuthContract {
         void login(LoginUser user);
 
         void register(CreateUser user);
+
+        void detachView();
     }
 }
