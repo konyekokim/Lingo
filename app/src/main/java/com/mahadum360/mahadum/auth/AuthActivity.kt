@@ -12,13 +12,18 @@ import com.mahadum360.mahadum.models.CreateUser
 import com.mahadum360.mahadum.models.LoginUser
 import com.mahadum360.mahadum.ui.activities.LandingPageActivity
 import com.mahadum360.mahadum.auth.di.AuthActivityContextModule
+import com.mahadum360.mahadum.models.User
 import javax.inject.Inject
 
 class AuthActivity : AppCompatActivity(), AuthContract.View,
         LoginFragment.OnFragmentInteractionListener,
         RegisterFragment.OnFragmentInteractionListener {
-    override fun onSignUp(user: CreateUser?) {
-        presenter.register(user!!)
+    override fun onRegistrationSuccess(user: User) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onSignUp(user: CreateUser) {
+        presenter.register(user)
     }
 
     override fun onLogin() {
@@ -46,7 +51,7 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
             progressDialog!!.dismiss()
     }
 
-    override fun showError(call: String?, message: String?) {
+    override fun showError(call: String, message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
@@ -60,8 +65,8 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
         showLogin()
     }
 
-    override fun onLogin(user: LoginUser?) {
-        presenter.login(user!!)
+    override fun onLogin(user: LoginUser) {
+        presenter.login(user)
     }
 
     override fun onSignUp() {
