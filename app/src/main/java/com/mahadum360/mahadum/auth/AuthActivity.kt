@@ -19,6 +19,10 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
         LoginFragment.OnFragmentInteractionListener,
         RegisterFragment.OnFragmentInteractionListener {
     override fun onRegistrationSuccess(user: User) {
+        //TODO("Add toast message here")
+        val intent = Intent(this, LandingPageActivity::class.java)
+        startActivity(intent)
+        finish()
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

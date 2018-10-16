@@ -42,6 +42,7 @@ constructor(private val apiService: ApiService, private val realmService: RealmS
                     view.hideProgress()
                     if (r.isSuccessful) {
                         view.onLoginSuccess()
+                        Log.e("Token", token)
                     }
                 }, { error ->
                     view.showError("login_error", "An error occurred")
@@ -64,7 +65,7 @@ constructor(private val apiService: ApiService, private val realmService: RealmS
                     view.hideProgress()
                     if (item.isSuccessful) {
                         assert(result != null)
-                        view.onRegistrationSuccess(authResponseToUser(result!!, token))
+                        view.onRegistrationSuccess(authResponseToUser(result!!, token!!))
                         realmService.setLoggedIn()
                     }
                 }, { error ->

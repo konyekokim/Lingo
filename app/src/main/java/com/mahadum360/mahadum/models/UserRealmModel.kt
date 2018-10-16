@@ -1,6 +1,7 @@
 package com.mahadum360.mahadum.models
 
 import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
 
 
 //data class User(var status: String = "",
@@ -16,17 +17,18 @@ import io.realm.RealmObject
 //        var kids_assigned: String? = "",
 //        var loggedIn: Boolean? = false)
 
-open class UserRealmModel (var id: Long? = 0L,
-                     var status: String? = null,
-                     var firstName: String? = null,
-                     var authToken: String? = null,
-                     var surname: String? = null,
-                     var email: String? = null,
-                     var phoneNumber: String? = null,
-                     var type: String? = null,
-                     var numberOfKids: String? = null,
-                     var school: String? = null,
-                     var courses_assigned: String? = null,
-                     var kidsAssigned: String? = null,
-                     var loggedIn: Boolean = false,
-                     var mahadumToken: String? = null) : RealmObject()
+open class UserRealmModel (@PrimaryKey
+                           var id: Long? = 0L,
+                           var status: String? = null,
+                           var firstName: String? = null,
+                           var authToken: String? = null,
+                           var surname: String? = null,
+                           var email: String? = null,
+                           var phoneNumber: String? = null,
+                           var type: String? = null,
+                           var numberOfKids: String? = null,
+                           var school: String? = null,
+                           var courses_assigned: String? = null,
+                           var kidsAssigned: String? = null,
+                           var loggedIn: Boolean = false,
+                           var mahadumToken: String? = null) : RealmObject()
