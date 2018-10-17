@@ -18,7 +18,7 @@ import io.realm.annotations.PrimaryKey
 //        var loggedIn: Boolean? = false)
 
 open class UserRealmModel (@PrimaryKey
-                           var id: Long? = 0L,
+                           var id: Long? = 1L,
                            var status: String? = null,
                            var firstName: String? = null,
                            var authToken: String? = null,
@@ -30,5 +30,4 @@ open class UserRealmModel (@PrimaryKey
                            var school: String? = null,
                            var courses_assigned: String? = null,
                            var kidsAssigned: String? = null,
-                           var loggedIn: Boolean = false,
-                           var mahadumToken: String? = null) : RealmObject()
+                           var loggedIn: Boolean? = false) : RealmObject()

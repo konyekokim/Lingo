@@ -20,7 +20,10 @@ data class AuthResponse(@SerializedName("status")
                               var phoneNumber: String = "",
                         @SerializedName("type")
                               @Expose
-                              var type: String = "")
+                              var type: String = "",
+                        @SerializedName("mahadum_token")
+                              @Expose
+                              var authToken: String = "")
 
 data class StatusResponse(@SerializedName("status")
                                         @Expose
@@ -159,13 +162,14 @@ data class UpdateUser(val first_name: String,
                       val surname: String,
                       val phone_number: String)
 
-data class User(var status: String = "",
-                var first_name: String = "",
-                var authToken: String = "",
-                var surname: String = "",
-                var email: String = "",
-                var phone_number: String = "",
-                var type: String = "",
+data class User(var id: Long? = 1L,
+                var status: String? = "",
+                var first_name: String? = "",
+                var authToken: String? = "",
+                var surname: String? = "",
+                var email: String? = "",
+                var phone_number: String? = "",
+                var type: String? = "",
                 var number_of_kids: String? = "",
                 var school: String? = "",
                 var courses_assigned: String? = "",
