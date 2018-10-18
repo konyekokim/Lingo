@@ -25,10 +25,6 @@ data class AuthResponse(@SerializedName("status")
                               @Expose
                               var authToken: String = "")
 
-data class StatusResponse(@SerializedName("status")
-                                        @Expose
-                                        val status: String)
-
 data class LessonDetailsResponse(@SerializedName("lesson_uid")
                                         @Expose
                                         val lessonUid: Int,
@@ -161,6 +157,11 @@ data class PasswordResponse(val status: String)
 data class UpdateUser(val first_name: String,
                       val surname: String,
                       val phone_number: String)
+
+data class AddKid(val first_name: String,
+                  val surname: String)
+
+data class StatusResponse(val status: String)
 
 data class User(var id: Long? = 1L,
                 var status: String? = "",

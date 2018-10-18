@@ -1,13 +1,7 @@
 package com.mahadum360.mahadum.data
 
 
-import com.mahadum360.mahadum.models.AuthResponse
-import com.mahadum360.mahadum.models.ChangePassword
-import com.mahadum360.mahadum.models.CreateUser
-import com.mahadum360.mahadum.models.LoginUser
-import com.mahadum360.mahadum.models.PasswordRequest
-import com.mahadum360.mahadum.models.PasswordResponse
-import com.mahadum360.mahadum.models.UpdateUser
+import com.mahadum360.mahadum.models.*
 
 import io.reactivex.Observable
 import okhttp3.ResponseBody
@@ -47,8 +41,9 @@ interface ApiService {
     @GET("parent/kids")
     fun getKidsDetails(@Header("MAHADUM-TOKEN") token: String): Call<ResponseBody>
 
-    @POST("parent/kids/add")
-    fun addKid(@Header("MAHADUM-TOKEN") token: String): Call<ResponseBody>
+    @POST("parent/addkid")
+    fun addKid(@Header("MAHADUM-TOKEN") token: String,
+               @Body addKid: AddKid): Observable<Response<StatusResponse>>
 
     //Teacher Endpoints
     @POST("teacher/school")

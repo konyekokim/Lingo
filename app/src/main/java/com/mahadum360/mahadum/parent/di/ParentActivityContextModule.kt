@@ -1,6 +1,5 @@
 package com.mahadum360.mahadum.parent.di
 
-import com.mahadum360.mahadum.auth.AuthContract
 import com.mahadum360.mahadum.data.ApiService
 import com.mahadum360.mahadum.data.RealmService
 import com.mahadum360.mahadum.parent.ParentContract
