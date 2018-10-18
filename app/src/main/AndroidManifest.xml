@@ -71,7 +71,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".parent.ParentActivity" />
-        <activity android:name=".bookstore.BookStoreActivity"></activity>
+        <activity android:name=".bookstore.BookStoreActivity" />
+        <activity android:name=".learning.LearningActivity"></activity>
     </application>
 
 </manifest>

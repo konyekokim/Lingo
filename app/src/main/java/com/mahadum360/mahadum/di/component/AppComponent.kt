@@ -7,6 +7,8 @@ import com.mahadum360.mahadum.auth.di.AuthActivityComponent
 import com.mahadum360.mahadum.auth.di.AuthActivityContextModule
 import com.mahadum360.mahadum.bookstore.di.BookStoreActivityComponent
 import com.mahadum360.mahadum.bookstore.di.BookStoreActivityContextModule
+import com.mahadum360.mahadum.learning.di.LearningActivityComponent
+import com.mahadum360.mahadum.learning.di.LearningActivityContextModule
 import com.mahadum360.mahadum.parent.di.ParentActivityComponent
 import com.mahadum360.mahadum.parent.di.ParentActivityContextModule
 
@@ -25,4 +27,6 @@ interface AppComponent {
     fun add(module: ParentActivityContextModule): ParentActivityComponent
 
     fun add(module: BookStoreActivityContextModule): BookStoreActivityComponent
+
+    fun add(module: LearningActivityContextModule): LearningActivityComponent
 }
