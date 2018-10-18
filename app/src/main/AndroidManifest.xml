@@ -70,7 +70,8 @@
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".parent.ParentActivity"></activity>
+        <activity android:name=".parent.ParentActivity" />
+        <activity android:name=".bookstore.BookStoreActivity"></activity>
     </application>
 
 </manifest>
