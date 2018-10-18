@@ -4,7 +4,7 @@ import com.mahadum360.mahadum.bookstore.BookStoreActivity
 import dagger.Subcomponent
 
 @BookStoreScope
-@Subcomponent(modules = arrayOf(BookStoreActivityContextModule::class))
+@Subcomponent(modules = [BookStoreActivityContextModule::class])
 interface BookStoreActivityComponent{
 
     fun inject(activity: BookStoreActivity)

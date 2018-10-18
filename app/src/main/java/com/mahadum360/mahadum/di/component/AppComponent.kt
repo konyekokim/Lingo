@@ -17,7 +17,7 @@ import javax.inject.Singleton
 import dagger.Component
 
 @Singleton
-@Component(modules = arrayOf(AppModule::class, SchedulerProviderModule::class, RealmModule::class))
+@Component(modules = [AppModule::class, SchedulerProviderModule::class, RealmModule::class])
 interface AppComponent {
     /*
     void inject(Mahadum application);*/

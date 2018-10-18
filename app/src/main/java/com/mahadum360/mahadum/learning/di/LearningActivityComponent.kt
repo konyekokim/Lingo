@@ -4,7 +4,7 @@ import com.mahadum360.mahadum.learning.LearningActivity
 import dagger.Subcomponent
 
 @LearningScope
-@Subcomponent(modules = arrayOf(LearningActivityContextModule::class))
+@Subcomponent(modules = [LearningActivityContextModule::class])
 interface LearningActivityComponent{
 
     fun inject(activity: LearningActivity)
