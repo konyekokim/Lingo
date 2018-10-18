@@ -15,4 +15,8 @@ constructor(private val apiService: ApiService, private val realmService: RealmS
     init {
         compositeDisposable = CompositeDisposable()
     }
+
+    override fun detachView() {
+
+    }
 }
