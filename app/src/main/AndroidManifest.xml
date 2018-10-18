@@ -61,16 +61,16 @@
             android:parentActivityName=".ui.activities.VideoViewActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.fragments.PdfReaderFragment" />
+        <activity android:name=".ui.fragments.PdfReaderFragment" />
         <activity
             android:name=".ui.activities.LandingPageActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.mahadum360.mahadum.auth.AuthActivity"
+            android:name=".auth.AuthActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".parent.ParentActivity"></activity>
     </application>
 
 </manifest>
