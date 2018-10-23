@@ -11,6 +11,8 @@ import com.mahadum360.mahadum.learning.di.LearningActivityComponent
 import com.mahadum360.mahadum.learning.di.LearningActivityContextModule
 import com.mahadum360.mahadum.parent.di.ParentActivityComponent
 import com.mahadum360.mahadum.parent.di.ParentActivityContextModule
+import com.mahadum360.mahadum.teacher.di.TeacherActivityComponent
+import com.mahadum360.mahadum.teacher.di.TeacherActivityContextModule
 
 import javax.inject.Singleton
 
@@ -29,4 +31,6 @@ interface AppComponent {
     fun add(module: BookStoreActivityContextModule): BookStoreActivityComponent
 
     fun add(module: LearningActivityContextModule): LearningActivityComponent
+
+    fun add(module: TeacherActivityContextModule) : TeacherActivityComponent
 }

@@ -72,7 +72,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".parent.ParentActivity" />
         <activity android:name=".bookstore.BookStoreActivity" />
-        <activity android:name=".learning.LearningActivity"></activity>
+        <activity android:name=".learning.LearningActivity" />
+        <activity android:name=".teacher.TeacherActivity"></activity>
     </application>
 
 </manifest>
