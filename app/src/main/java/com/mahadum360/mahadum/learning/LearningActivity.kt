@@ -5,9 +5,14 @@ import android.os.Bundle
 import com.mahadum360.mahadum.Mahadum
 import com.mahadum360.mahadum.R
 import com.mahadum360.mahadum.learning.di.LearningActivityContextModule
+import com.mahadum360.mahadum.models.Course
 import javax.inject.Inject
 
 class LearningActivity : AppCompatActivity(), LearningContract.View {
+    override fun onGetAllCoursesSuccess(courses: List<Course>) {
+
+    }
+
     override fun hideProgress() {
 
     }

@@ -53,8 +53,8 @@ interface ApiService {
     fun kidsInSchoolAndCourse(@Header("MAHADUM-TOKEN") token: String): Call<ResponseBody>
 
     //Course Endpoints
-    @GET("courses/all")
-    fun getAllCourses(@Header("MAHADUM-TOKEN") token: String): Call<ResponseBody>
+    @GET("course/all")
+    fun getAllCourses(@Header("MAHADUM-TOKEN") token: String): Observable<Response<GetAllCoursesResponse>>
 
     @GET("courses/{course-id}/summary")
     fun getCourseSummary(@Header("MAHADUM-TOKEN") token: String,

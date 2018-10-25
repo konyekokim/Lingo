@@ -37,8 +37,8 @@ constructor(private val apiService: ApiService, private val realmService: RealmS
                     view.hideProgress()
                     if (r.isSuccessful) {
                         assert(result != null)
-                        view.onLoginSuccess(authResponseToUser(result!!))
-                        realmService.setUserData(authResponseToUser(result))
+                        realmService.setUserData(authResponseToUser(result!!))
+                        view.onLoginSuccess(authResponseToUser(result))
                     }
                 }, { error ->
                     view.showError("login_error", "An error occurred")

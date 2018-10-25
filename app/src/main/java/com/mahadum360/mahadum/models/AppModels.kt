@@ -78,17 +78,23 @@ data class CourseResponse(
         var courseOwnerEmail: String,
         @SerializedName("course_owner_phone_number")
         @Expose
-        var courseOwnerPhoneNumber: String
-)
+        var courseOwnerPhoneNumber: String)
 
 data class GetAllCoursesResponse(
         @SerializedName("all_courses")
         @Expose
-        var allCourses: CourseResponse,
+        var allCourses: ArrayList<CourseResponse>,
         @SerializedName("status")
         @Expose
-        val status: String
-)
+        val status: String)
+
+data class Course(
+        var id: Long? = 1L,
+        var courseUid: Int? = null,
+        var title: String? = null,
+        var courseOwner: String? = null,
+        var courseOwnerEmail: String? = null,
+        var courseOwnerPhoneNumber: String? = null)
 
 data class CourseTitleAndIdResponse(
         @SerializedName("title")
@@ -96,8 +102,7 @@ data class CourseTitleAndIdResponse(
         var title: String,
         @SerializedName("course_id")
         @Expose
-        var courseUid: Int
-)
+        var courseUid: Int)
 
 //data class LessonsTakenResponse()
 
@@ -134,8 +139,7 @@ data class KidsDetailsResponse(
         var course: CourseTitleAndIdResponse,
         @SerializedName("lessons_taken")
         @Expose
-        var lessonsTaken: ArrayList<String>
-)
+        var lessonsTaken: ArrayList<String>)
 
 data class ChangePassword(val password: String,
                           val new_password: String)
