@@ -1,6 +1,5 @@
 package com.mahadum360.mahadum.data
 
-import android.os.CpuUsageInfo
 import android.util.Log
 import com.mahadum360.mahadum.models.Course
 import com.mahadum360.mahadum.models.CourseRealmModel

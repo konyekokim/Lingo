@@ -115,6 +115,7 @@ constructor(private val apiService: ApiService, private val realmService: RealmS
         compositeDisposable.dispose()
     }
 
+    //change this implementation style
     private fun authResponseToUser(response: AuthResponse): User {
         val user = User()
         user.status = response.status
