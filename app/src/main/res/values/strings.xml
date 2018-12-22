@@ -39,4 +39,7 @@
     <string name="title_activity_main2">MainActivity</string>
     <string name="title_activity_video">VideoActivity</string>
     <string name="activity_bookstore">Bookstore</string>
+    <string name="most_recent">Most Recent</string>
+    <string name="recommended">Recommended</string>
+    <string name="best_sellers">Best Sellers</string>
 </resources>
