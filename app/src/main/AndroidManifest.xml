@@ -23,11 +23,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -70,7 +65,13 @@
         <activity android:name=".parent.ParentActivity" />
         <activity android:name=".bookstore.BookStoreActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".learning.LearningActivity" />
         <activity android:name=".teacher.TeacherActivity"/>
     </application>
