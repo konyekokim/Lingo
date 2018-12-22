@@ -180,3 +180,21 @@ data class User(var id: Long? = 1L,
                 var courses_assigned: String? = "",
                 var kids_assigned: String? = "",
                 var loggedIn: Boolean? = false)
+
+data class CreateBook(var title: String = "",
+                      var author: String = "",
+                      var description: String = "",
+                      var frontend_image_url: String = "")
+
+data class Book(var title: String = "",
+                var book_id: Long = 0L,
+                var author: String = "",
+                var description: String = "",
+                var frontend_image_url: String = "")
+
+data class GetAllBooks(@SerializedName("books")
+                       @Expose
+                       var books: List<Book>,
+                       @SerializedName("status")
+                       @Expose
+                       val status: String)
