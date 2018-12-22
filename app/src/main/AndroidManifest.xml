@@ -14,10 +14,8 @@
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
         <activity
             android:name=".ui.activities.FirstActivity"
@@ -61,7 +59,6 @@
             android:parentActivityName=".ui.activities.VideoViewActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.fragments.PdfReaderFragment" />
         <activity
             android:name=".ui.activities.LandingPageActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -71,9 +68,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".parent.ParentActivity" />
-        <activity android:name=".bookstore.BookStoreActivity" />
+        <activity android:name=".bookstore.BookStoreActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop"/>
         <activity android:name=".learning.LearningActivity" />
-        <activity android:name=".teacher.TeacherActivity"></activity>
+        <activity android:name=".teacher.TeacherActivity"/>
     </application>
 
 </manifest>
