@@ -15,7 +15,10 @@ import com.mahadum360.mahadum.models.Book
 import kotlinx.android.synthetic.main.activity_book_store.*
 import javax.inject.Inject
 
-class BookStoreActivity : AppCompatActivity(), BookStoreContract.View {
+class BookStoreActivity : AppCompatActivity(), BookStoreContract.View,
+        ParentStoreFragment.OnFragmentInteractionListener,
+        MyBooksFragment.OnFragmentInteractionListener {
+
     override fun onGetAllBooks(books: List<Book>) {
 
     }

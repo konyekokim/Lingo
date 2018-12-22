@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dip"
+    android:layout_marginStart="5dip"
+    android:layout_marginEnd="5dip"
+    android:layout_marginTop="8dip"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/bookPosterContainer"
+        android:layout_width="match_parent"
+        android:layout_height="140dip"
+        app:cardCornerRadius="5dip"
+        app:cardElevation="4dip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/bookPoster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/book3"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/bookTitle"
+        style="@style/TextViewStyle"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="8dip"
+        android:layout_marginStart="0dip"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookPosterContainer"
+        tools:text="@tools:sample/full_names"
+        tools:ignore="SmallSp"/>
+
+    <TextView
+        android:id="@+id/progress"
+        style="@style/TextViewStyle"
+        android:fontFamily="@font/montserrat_light"
+        android:layout_marginStart="0dip"
+        android:textColor="@color/text_color"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitle"
+        tools:ignore="SmallSp"
+        tools:text="34%"/>
+
+    <TextView
+        android:id="@+id/newIndicator"
+        style="@style/TextViewStyle"
+        android:textSize="9sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookTitle"
+        tools:ignore="SmallSp"/>
+
+    <TextView
+        android:id="@+id/authorName"
+        style="@style/TextViewStyle"
+        android:fontFamily="@font/montserrat_light"
+        android:layout_marginStart="0dip"
+        android:textColor="@color/text_color"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress"
+        tools:ignore="SmallSp"
+        tools:text="@tools:sample/full_names"/>
+
+</android.support.constraint.ConstraintLayout>

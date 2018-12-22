@@ -1,9 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".bookstore.fragments.ParentStoreFragment">
+    android:layout_height="match_parent">
 
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dip"
+        tools:context=".bookstore.fragments.ParentStoreFragment">
 
-</FrameLayout>
+        <android.support.v7.widget.CardView
+            android:id="@+id/featureBook"
+            android:layout_width="0dip"
+            android:layout_height="@dimen/feature_book_card_height"
+            android:layout_marginStart="16dip"
+            android:layout_marginEnd="16dip"
+            app:cardCornerRadius="8dip"
+            app:cardElevation="5dip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/backDropImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/book1"
+                tools:ignore="ContentDescription" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/overlay" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/bookTitle"
+                    style="@style/TextViewStyle"
+                    android:layout_marginTop="16dip"
+                    android:fontFamily="@font/montserrat_medium"
+                    app:layout_constraintEnd_toStartOf="@+id/bookPosterContainer"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@tools:sample/full_names" />
+
+                <TextView
+                    android:id="@+id/bookDetails"
+                    style="@style/TextViewStyle"
+                    android:layout_width="0dip"
+                    android:layout_marginTop="4dip"
+                    android:layout_marginEnd="4dip"
+                    android:maxLines="6"
+                    android:minLines="3"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/bookPosterContainer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bookTitle"
+                    tools:text="@tools:sample/lorem/random" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/bookPosterContainer"
+                    android:layout_width="@dimen/feature_book_width"
+                    android:layout_height="@dimen/feature_book_height"
+                    android:layout_marginEnd="16dip"
+                    app:cardCornerRadius="5dip"
+                    app:cardElevation="4dip"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/bookPoster"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/book3"
+                        tools:ignore="ContentDescription" />
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/mostRecent"
+            style="@style/TextViewStyle"
+            android:layout_marginTop="8dip"
+            android:layout_marginStart="24dip"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/most_recent"
+            android:textColor="@color/text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/featureBook" />
+
+        <TextView
+            android:id="@+id/recommended"
+            style="@style/TextViewStyle"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/recommended"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/bestSellers"
+            app:layout_constraintHorizontal_bias="0.43"
+            app:layout_constraintStart_toEndOf="@+id/mostRecent"
+            app:layout_constraintTop_toTopOf="@+id/mostRecent" />
+
+        <TextView
+            android:id="@+id/bestSellers"
+            style="@style/TextViewStyle"
+            android:layout_marginEnd="24dip"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/best_sellers"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recommended" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dip"
+            android:layout_marginStart="10dip"
+            android:layout_marginEnd="13dip"
+            app:layoutManager="android.support.v7.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mostRecent"
+            app:spanCount="3"
+            tools:listitem="@layout/book_grid_item" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
