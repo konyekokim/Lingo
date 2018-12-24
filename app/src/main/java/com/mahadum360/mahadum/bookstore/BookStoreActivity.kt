@@ -18,6 +18,17 @@ import javax.inject.Inject
 class BookStoreActivity : AppCompatActivity(), BookStoreContract.View,
         ParentStoreFragment.OnFragmentInteractionListener,
         MyBooksFragment.OnFragmentInteractionListener {
+    override fun getRecommended() {
+
+    }
+
+    override fun getMostRecent() {
+
+    }
+
+    override fun getBestSellers() {
+
+    }
 
     override fun onGetAllBooks(books: List<Book>) {
 

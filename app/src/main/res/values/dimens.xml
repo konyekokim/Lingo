@@ -3,4 +3,5 @@
     <dimen name="feature_book_card_height">200dip</dimen>
     <dimen name="feature_book_height">84dip</dimen>
     <dimen name="feature_book_width">140dip</dimen>
+    <dimen name="progress_dimen">36dip</dimen>
 </resources>
