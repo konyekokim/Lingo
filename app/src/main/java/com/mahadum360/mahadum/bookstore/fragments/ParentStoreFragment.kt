@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mahadum360.mahadum.R
+import com.mahadum360.mahadum.bookstore.adapters.ParentBookStoreRecyclerAdapter
+import com.mahadum360.mahadum.models.Book
 import kotlinx.android.synthetic.main.fragment_parent_store.*
 
 class ParentStoreFragment : Fragment() {
@@ -30,6 +34,8 @@ class ParentStoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindListeners()
+        setViews()
+        progressBar.visibility = View.GONE
     }
 
     private fun bindListeners() {
@@ -40,6 +46,7 @@ class ParentStoreFragment : Fragment() {
             bestSellers.setTextColor(ContextCompat.getColor(context!!, R.color.text_color))
             mostRecent.typeface = ResourcesCompat.getFont(context!!, R.font.montserrat_regular)
             mostRecent.setTextColor(ContextCompat.getColor(context!!, R.color.text_color))
+            listener?.getRecommended()
         }
 
         bestSellers.setOnClickListener {
@@ -49,6 +56,7 @@ class ParentStoreFragment : Fragment() {
             bestSellers.setTextColor(ContextCompat.getColor(context!!, R.color.colorPrimary))
             mostRecent.typeface = ResourcesCompat.getFont(context!!, R.font.montserrat_regular)
             mostRecent.setTextColor(ContextCompat.getColor(context!!, R.color.text_color))
+            listener?.getBestSellers()
         }
 
         mostRecent.setOnClickListener {
@@ -58,11 +66,18 @@ class ParentStoreFragment : Fragment() {
             bestSellers.setTextColor(ContextCompat.getColor(context!!, R.color.text_color))
             mostRecent.typeface = ResourcesCompat.getFont(context!!, R.font.montserrat_semi_bold)
             mostRecent.setTextColor(ContextCompat.getColor(context!!, R.color.colorPrimary))
+            listener?.getMostRecent()
         }
     }
 
     private fun setViews() {
         progressBar.visibility = View.VISIBLE
+        with(parentBooksList) {
+            layoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
+            setHasFixedSize(true)
+            itemAnimator = DefaultItemAnimator()
+            adapter = ParentBookStoreRecyclerAdapter(ArrayList(), listener!!)
+        }
 
     }
 
@@ -71,7 +86,7 @@ class ParentStoreFragment : Fragment() {
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            throw RuntimeException("$context must implement OnFragmentInteractionListener")
         }
     }
 
@@ -88,6 +103,8 @@ class ParentStoreFragment : Fragment() {
         fun getMostRecent()
 
         fun getBestSellers()
+
+        fun onBookClicked(book: Book)
     }
 
     companion object {

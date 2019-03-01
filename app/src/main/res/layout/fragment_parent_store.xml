@@ -20,7 +20,8 @@
             app:cardCornerRadius="8dip"
             app:cardElevation="5dip"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/backDropImage"
@@ -90,8 +91,8 @@
         <TextView
             android:id="@+id/mostRecent"
             style="@style/TextViewStyle"
-            android:layout_marginTop="8dip"
             android:layout_marginStart="24dip"
+            android:layout_marginTop="8dip"
             android:fontFamily="@font/montserrat_regular"
             android:text="@string/most_recent"
             android:textColor="@color/text_color"
@@ -120,10 +121,11 @@
             app:layout_constraintTop_toTopOf="@+id/recommended" />
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/parentBooksList"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dip"
             android:layout_marginStart="10dip"
+            android:layout_marginTop="8dip"
             android:layout_marginEnd="13dip"
             app:layoutManager="android.support.v7.widget.GridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
@@ -137,11 +139,12 @@
             android:layout_width="@dimen/progress_dimen"
             android:layout_height="@dimen/progress_dimen"
             android:elevation="8dip"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.281"
+            app:layout_constraintVertical_bias="0.350"
             tools:ignore="UnusedAttribute" />
 
     </android.support.constraint.ConstraintLayout>

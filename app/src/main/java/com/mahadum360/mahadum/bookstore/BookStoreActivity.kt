@@ -18,6 +18,10 @@ import javax.inject.Inject
 class BookStoreActivity : AppCompatActivity(), BookStoreContract.View,
         ParentStoreFragment.OnFragmentInteractionListener,
         MyBooksFragment.OnFragmentInteractionListener {
+    override fun onBookClicked(book: Book) {
+
+    }
+
     override fun getRecommended() {
 
     }
@@ -76,7 +80,7 @@ class BookStoreActivity : AppCompatActivity(), BookStoreContract.View,
         tabs.setupWithViewPager(viewPager)
         setupTabs()
         backButton.setOnClickListener {
-            //todo implement back function
+            onBackPressed()
         }
     }
 
@@ -94,8 +98,8 @@ class BookStoreActivity : AppCompatActivity(), BookStoreContract.View,
 
     private fun setupViewPager() {
         val adapter = BookStoreViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(ParentStoreFragment(), "Parent Store")
-        adapter.addFragment(MyBooksFragment(), "My Books")
+        adapter.addFragment(ParentStoreFragment.newInstance(), "Parent Store")
+        adapter.addFragment(MyBooksFragment.newInstance(), "My Books")
         viewPager.adapter = adapter
     }
 }
