@@ -12,12 +12,27 @@ import com.mahadum360.mahadum.models.CreateUser
 import com.mahadum360.mahadum.models.LoginUser
 import com.mahadum360.mahadum.ui.activities.LandingPageActivity
 import com.mahadum360.mahadum.auth.di.AuthActivityContextModule
+import com.mahadum360.mahadum.auth.fragments.LoginFragment
+import com.mahadum360.mahadum.auth.fragments.RegisterFragment
+import com.mahadum360.mahadum.auth.fragments.WelcomeFragment
+import com.mahadum360.mahadum.bookstore.BookStoreActivity
+import com.mahadum360.mahadum.learning.LearningActivity
 import com.mahadum360.mahadum.models.User
+import com.mahadum360.mahadum.teacher.TeacherActivity
 import javax.inject.Inject
 
 class AuthActivity : AppCompatActivity(), AuthContract.View,
         LoginFragment.OnFragmentInteractionListener,
-        RegisterFragment.OnFragmentInteractionListener {
+        RegisterFragment.OnFragmentInteractionListener,
+        WelcomeFragment.OnFragmentInteractionListener{
+    override fun onEnterLearnClicked() {
+        startActivity(Intent(this@AuthActivity, LearningActivity::class.java))
+    }
+
+    override fun onExploreBookStoreClicked() {
+        startActivity(Intent(this@AuthActivity, BookStoreActivity::class.java))
+    }
+
     override fun onChangePasswordSuccess(response: String) {
     }
 
@@ -25,9 +40,13 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
     }
 
     override fun onRegistrationSuccess(user: User) {
-        val intent = Intent(this, LandingPageActivity::class.java)
+        /*val intent = Intent(this, LandingPageActivity::class.java)
         startActivity(intent)
-        finish()
+        finish()*/
+        if(user.type == "parent")
+            showWelcome()
+        else
+            startActivity(Intent(this@AuthActivity, TeacherActivity::class.java))
     }
 
     override fun onSignUp(user: CreateUser) {
@@ -64,9 +83,13 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
     }
 
     override fun onLoginSuccess(user: User) {
-        val intent = Intent(this, LandingPageActivity::class.java)
+        /*val intent = Intent(this, LandingPageActivity::class.java)
         startActivity(intent)
-        finish()
+        finish()*/
+        if(user.type == "parent")
+            showWelcome()
+        else
+            startActivity(Intent(this@AuthActivity, TeacherActivity::class.java))
     }
 
     override fun onLogout() {
@@ -88,6 +111,7 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
     private var progressDialog: ProgressDialog? = null
     private var loginFragment: LoginFragment? = null
     private var registerFragment: RegisterFragment? = null
+    private var welcomeFragment: WelcomeFragment? = null
     private lateinit var fragment: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -135,5 +159,11 @@ class AuthActivity : AppCompatActivity(), AuthContract.View,
             registerFragment = RegisterFragment.newInstance()
         }
         loadFragment(registerFragment!!)
+    }
+
+    private fun showWelcome(){
+        if (welcomeFragment == null)
+            welcomeFragment = WelcomeFragment.newInstance()
+        loadFragment(welcomeFragment!!)
     }
 }

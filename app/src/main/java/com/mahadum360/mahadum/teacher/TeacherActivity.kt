@@ -4,10 +4,15 @@ import android.support.v7.app.AppCompatActivity
 import com.mahadum360.mahadum.R
 import android.os.Bundle
 import com.mahadum360.mahadum.Mahadum
+import com.mahadum360.mahadum.models.Course
 import com.mahadum360.mahadum.teacher.di.TeacherActivityContextModule
 import javax.inject.Inject
 
 class TeacherActivity : AppCompatActivity(), TeacherContract.View {
+    override fun getAllCoursesSuccess(courses: List<Course>) {
+        //populate UI with courses
+    }
+
     override fun hideProgress() {
 
     }
@@ -34,5 +39,6 @@ class TeacherActivity : AppCompatActivity(), TeacherContract.View {
                 .appComponent
                 .add(TeacherActivityContextModule(this))
                 .inject(this)
+        presenter.getAllCourses()
     }
 }

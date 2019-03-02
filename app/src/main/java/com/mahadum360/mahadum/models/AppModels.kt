@@ -3,6 +3,13 @@ package com.mahadum360.mahadum.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
+data class ApiError(
+        @SerializedName("statusMsg")
+        @Expose
+        var errorMessage: String? = ""
+)
+
+
 data class AuthResponse(@SerializedName("status")
                               @Expose
                               val status: String,
@@ -83,10 +90,7 @@ data class CourseResponse(
 data class GetAllCoursesResponse(
         @SerializedName("all_courses")
         @Expose
-        var allCourses: ArrayList<CourseResponse>,
-        @SerializedName("status")
-        @Expose
-        val status: String)
+        var allCourses: List<CourseResponse>)
 
 data class Course(
         var id: Long? = 1L,

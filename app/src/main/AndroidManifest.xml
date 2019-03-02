@@ -69,11 +69,11 @@
             android:name=".auth.AuthActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme" />
         <activity android:name=".parent.ParentActivity" />
         <activity android:name=".bookstore.BookStoreActivity" />
         <activity android:name=".learning.LearningActivity" />
-        <activity android:name=".teacher.TeacherActivity"></activity>
+        <activity android:name=".teacher.TeacherActivity"/>
     </application>
 
 </manifest>

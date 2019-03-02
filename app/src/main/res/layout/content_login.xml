@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-    tools:context=".auth.LoginFragment"
+    tools:context=".auth.fragments.LoginFragment"
     tools:ignore="MissingPrefix"
     tools:showIn="@layout/fragment_login">
 

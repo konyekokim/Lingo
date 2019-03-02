@@ -1,4 +1,4 @@
-package com.mahadum360.mahadum.auth
+package com.mahadum360.mahadum.auth.fragments
 
 import android.content.Context
 import android.os.Bundle

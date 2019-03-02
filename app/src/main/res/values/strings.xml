@@ -38,4 +38,9 @@
     <string name="title_activity_book">BookActivity</string>
     <string name="title_activity_main2">MainActivity</string>
     <string name="title_activity_video">VideoActivity</string>
+
+    <string name="explore_bookstore" translatable="false">Explore Bookstore</string>
+    <string name="enter_learning_app" translatable="false">Enter Learning App</string>
+
+
 </resources>
