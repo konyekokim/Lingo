@@ -38,6 +38,10 @@
     <string name="title_activity_book">BookActivity</string>
     <string name="title_activity_main2">MainActivity</string>
     <string name="title_activity_video">VideoActivity</string>
+    <string name="activity_bookstore">Bookstore</string>
+    <string name="most_recent">Most Recent</string>
+    <string name="recommended">Recommended</string>
+    <string name="best_sellers">Best Sellers</string>
 
     <string name="explore_bookstore" translatable="false">Explore Bookstore</string>
     <string name="enter_learning_app" translatable="false">Enter Learning App</string>

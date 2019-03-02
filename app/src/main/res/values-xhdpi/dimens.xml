@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dip</dimen>
+    <dimen name="feature_book_card_height">240dip</dimen>
+    <dimen name="feature_book_height">160dip</dimen>
+    <dimen name="feature_book_width">96dip</dimen>
+    <dimen name="progress_dimen">54dip</dimen>
+</resources>

@@ -23,4 +23,8 @@
     <string name="title_activity_language_list">Aṣayan</string>
     <string name="title_activity_select_language">YanEde</string>
     <string name="title_activity_select_language2">YanEde2</string>
+    <string name="activity_bookstore">Ile-Iwe Ipamo</string>
+    <string name="most_recent">Most Recent</string>
+    <string name="recommended">Niyanju</string>
+    <string name="best_sellers">Best Sellers</string>
 </resources>

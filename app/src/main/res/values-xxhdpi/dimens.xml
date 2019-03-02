@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dip</dimen>
+    <dimen name="feature_book_card_height">280dip</dimen>
+    <dimen name="feature_book_height">180dip</dimen>
+    <dimen name="feature_book_width">108dip</dimen>
+    <dimen name="progress_dimen">72dip</dimen>
+</resources>

@@ -85,6 +85,17 @@ interface ApiService {
     fun courseProgress(@Header("MAHADUM-TOKEN") token: String,
                        @Path("course-id") id: Int): Call<ResponseBody>
 
+    @POST("books/create")
+    fun addBook(@Header("MAHADUM-TOKEN") token: String, @Body create: CreateBook):
+            Observable<Response<StatusResponse>>
+
+    @GET("books/all")
+    fun getAllBooks(@Header("MAHADUM-TOKEN") token: String): Observable<Response<GetAllBooks>>
+
+    @GET("books/buy/{id}")
+    fun buyABook(@Header("MAHADUM-TOKEN") token: String, @Path("id") id: Long):
+            Observable<Response<StatusResponse>>
+
     companion object {
         val BASEURL = "http://hamdanae.com/api/v1/"
     }
